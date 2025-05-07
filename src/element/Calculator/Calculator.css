@@ -1,0 +1,32 @@
+@import url(../Empty/Empty.css);
+@import url(../Text-Area/TextArea.css);
+@import url(../Text-Input/TextInput.css);
+@import url(../List/List.css);
+
+.ecokompass_calculator_container {
+	padding: var(--var-padding-l);
+	height: 100%;
+	background: #ffffff;
+}
+
+.ecokompass_calculator_body {
+	height: fit-content;
+}
+
+.ecokompass_container {
+	box-shadow: 1px 1px 5px 3px var(--var-dark-silver);
+	background-color: #ffffff;
+	overflow: hidden;
+}
+
+.ecokompass_container > h5 {
+	font-size: clamp(var(--var-font-xxl), 2.5vw, var(--var-font-xxxxl));
+	margin-bottom: var(--var-padding-l);
+	padding: var(--var-padding-l);
+	border-bottom: 1px solid var(--var-silver-transparent);
+	font-weight: 600;
+}
+
+.ecokompass_formula_item {
+	font-weight: 700;
+}

@@ -1,0 +1,9 @@
+.empty_container {
+	padding: var(--var-padding-l);
+	color: var(--var-dark-silver);
+}
+
+.empty_container > svg {
+	width: var(--var-size-l);
+	height: var(--var-size-l);
+}

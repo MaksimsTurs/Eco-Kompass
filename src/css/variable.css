@@ -1,0 +1,83 @@
+:root {
+	interpolate-size: allow-keywords;
+
+	/* PADDING */
+	--var-padding-xs:    0.25rem;
+	--var-padding-s:     0.5rem;
+	--var-padding-m:     0.75rem;
+	--var-padding-l:     1rem;
+	--var-padding-xl:    1.25rem;
+	--var-padding-xxl:   1.5rem;
+	--var-padding-xxxl:  1.75rem;
+	--var-padding-xxxxl: 2rem;
+	/* PADDING */
+	/* MARGIN */
+	--var-margin-xs:    0.25rem;
+	--var-margin-s:     0.5rem;
+	--var-margin-m:     0.75rem;
+	--var-margin-l:     1rem;
+	--var-margin-xl:    1.25rem;
+	--var-margin-xxl:   1.5rem;
+	--var-margin-xxxl:  1.75rem;
+	--var-margin-xxxxl: 2rem;
+	/* MARGIN */
+	/* FONT */
+	--var-font-xs:    0.5rem;
+	--var-font-s:     0.65rem;
+	--var-font-m:     0.8rem;
+	--var-font-l:     0.95rem;
+	--var-font-xl:    1.15rem;
+	--var-font-xxl:   1.3rem;
+	--var-font-xxxl:  1.45rem;
+	--var-font-xxxxl: 1.6rem;
+	/* FONT */
+	/* GAP */
+	--var-gap-xs:    0.5rem;
+	--var-gap-s:     0.65rem;
+	--var-gap-m:     0.8rem;
+	--var-gap-l:     0.95rem;
+	--var-gap-xl:    1.15rem;
+	--var-gap-xxl:   1.3rem;
+	--var-gap-xxxl:  1.45rem;
+	--var-gap-xxxxl: 1.6rem;
+	/* GAP */
+	/* WIDTH AND HEIGHT */
+	--var-size-xs:    0.9rem;
+	--var-size-s:     1.15rem;
+	--var-size-m:     1.4rem;
+	--var-size-l:     1.65rem;
+	--var-size-xl:    1.9rem;
+	--var-size-xxl:   2.15rem;
+	--var-size-xxxl:  2.4rem;
+	--var-size-xxxxl: 2.65rem;
+
+	--var-eco-portrait-width: 30rem;
+	--var-eco-portrait-height: 100%;
+	/* WIDTH AND HEIGHT */
+	/* BORDER RADIUS */
+	--var-border-radius-xs:    5px;
+	--var-border-radius-s:     6px;
+	--var-border-radius-m:     7px;
+	--var-border-radius-l:     8px;
+	--var-border-radius-xl:    9px;
+	--var-border-radius-xxl:   10px;
+	--var-border-radius-xxxl:  11px;
+	--var-border-radius-xxxxl: 12px;
+	/* BORDER RADIUS */
+	/* COLOR */
+	--var-white-hight-transparent: #ffffff4d;
+	--var-black-medium-transparent: rgba(0, 0, 0, 0.5);
+
+	--var-link-color: #00255d;
+
+	--var-dark-red: #731414;
+	--var-dark-silver: #333333c2;
+	--var-dark-red-trasparent: #7314144d;
+	--var-silver-transparent: #c0c0c080;
+	/* COLOR */
+	/* TRANSITION TIME */
+	--var-transition-fast: 0.2s;
+	--var-transition-slow: 0.45s;
+	--var-transition-very-slow: 0.75s;
+	/* TRANSITION TIME */
+}

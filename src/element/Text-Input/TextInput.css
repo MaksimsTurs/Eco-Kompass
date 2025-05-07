@@ -1,0 +1,37 @@
+.text_input_container > label {
+	font-size: clamp(var(--var-font-m), 2.5vw, var(--var-font-l));
+}
+
+.text_input_container:hover > label  {
+	font-weight: bolder;
+}
+
+@media(width <= 400px) {
+	.text_input_container {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+
+	.text_input,
+	.text_input_container > div {
+		width: 100%;
+	}
+}
+
+.text_input {
+	padding: var(--var-padding-s) var(--var-padding-l);	
+	border-top-left-radius: var(--var-border-radius-xs);
+	border-top-right-radius: var(--var-border-radius-xs);
+	border-bottom: 1px solid #000000;
+	background-color: #c0c0c053;
+}
+
+.text_input:focus,
+.text_input:hover {
+	background-color: #c0c0c0a2;
+}
+
+.text_input::placeholder {
+	font-size: var(--var-font-m);
+	color: var(--var-dark-silver);
+}

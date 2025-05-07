@@ -1,0 +1,1 @@
+export const G_IMPORT_MANAGER_FILE_IS_NOT_JS = (filePath) => filePath + "is not JS file!";

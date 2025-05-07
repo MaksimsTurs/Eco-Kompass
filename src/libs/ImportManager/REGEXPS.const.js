@@ -1,0 +1,1 @@
+export const G_IMPORT_MANAGER_DOT_SPLITER = /\./;

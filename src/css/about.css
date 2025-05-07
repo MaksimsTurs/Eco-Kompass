@@ -1,0 +1,66 @@
+.ecokompass_about_container {
+	height: 100%;
+	background: url(../img/Umberto_Eco.jpg) 50% 50% no-repeat fixed;
+	background-size: var(--var-eco-portrait-width) var(--var-eco-portrait-height);
+	z-index: 0;
+}
+
+.ecokompass_about_container::after {
+	background-color: var(--var-white-hight-transparent);
+	content: "";
+	position: fixed;
+	left: 0%;
+	top: 0%;
+	width: 100%;
+	height: 100%;
+	backdrop-filter: blur(10px);
+	z-index: -1;
+}
+
+.ecokompass_about_body {
+	padding: var(--var-padding-l);
+	width: calc(var(--var-padding-l) + var(--var-eco-portrait-width));
+	height: fit-content;
+}
+
+.ecokompass_quote {
+	padding: var(--var-padding-l);
+	background-color: var(--var-white-hight-transparent);
+	border-radius: var(--var-border-radius-xs);
+	box-shadow: 0 0 5px 1px var(--var-black-medium-transparent);
+	background: var(--var-white-hight-transparent);
+	text-align: center;
+	font-weight: 700;
+}
+
+.ecokompass_option_title {
+	font-size: var(--var-font-xl);
+	font-weight: 700;
+}
+
+.ecokompass_color_level {
+	padding: 0 var(--var-padding-xs);
+	color: white;
+	width: fit-content;
+  display: inline-block;
+}
+
+.dark_green_color_level {
+	background-color: #004b00;
+}
+
+.dark_red_color_level {
+	background-color: #590302;
+}
+
+.green_color_level {
+	background-image: linear-gradient(90deg, #004b00 50%, #03a603 50%);
+}
+
+.orange_color_level {
+	background-color: #a65f03;
+}
+
+.red_color_level {
+	background-image: linear-gradient(90deg, #590302 50%, #a60603 50%);
+}

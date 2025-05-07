@@ -1,0 +1,45 @@
+.button {
+	font-weight: 600;
+	background-color: #000000;
+	padding: var(--var-padding-s) var(--var-padding-xl);
+	box-shadow: 3px 3px 0 0 #000000;
+	color: #ffffff;
+	cursor: pointer;
+	width: fit-content;
+	position: relative;
+	z-index: 0;
+}
+
+.button::after {
+	transition: opacity var(--var-transition-fast) ease;
+	border: 1px solid #000000;
+	content: "";
+	position: absolute;
+	left: 0%;
+	top: 0%;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	z-index: -1;
+	background-color: #ffffff;
+}
+
+.button:disabled {
+	background-color: #909090;
+}
+
+.button:disabled:hover {
+	color: white;
+}
+
+.button:disabled::after {
+	display: none;
+	pointer-events: none;
+}
+
+.button:hover,
+.button:hover::after {
+	opacity: 1;
+	color: #000000;
+	transition: opacity var(--var-transition-fast) ease;
+}

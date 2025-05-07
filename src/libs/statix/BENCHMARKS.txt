@@ -1,0 +1,73 @@
+INIT REDERN
+------------------------
+Loop + Map X6:
+Rendering 506.7 ms
+Painting  267.6 ms
+Scripting 101.8 ms
+	each 49.3 ms
+
+Loop + Map X6:
+Rendering 512.3 ms
+Painting  233.1 ms
+Scripting 95.7  ms
+	each 41.3 ms
+
+Loop + Map X6:
+Rendering 514.6 ms
+Painting  239.4 ms
+Scripting 109.8 ms
+	each 33.8 ms
+
+Loop X6:
+Rendering 616.2 ms
+Painting  284.7 ms
+Scripting 130.8 ms
+	each 36.5 ms
+
+Loop X6:
+Rendering 578.3 ms
+Painting  309.4 ms
+Scripting 106.7 ms
+	each 35.9 ms
+
+Loop X6:
+Rendering 506.5 ms
+Painting  282.2 ms
+Scripting 137.8 ms
+	each 63.3 ms
+
+REMOVE LAST
+------------------------
+Loop + Map X6:
+Rendering 75.4 ms
+Painting  58.5 ms
+Scripting 12.5 ms
+
+Loop X6:
+Rendering 189.6 ms
+Painting  267.7 ms
+Scripting 71.1  ms
+
+REMOVE FIRST
+------------------------
+Loop X6:
+Rendering 364.4 ms
+Painting  294.5 ms
+Scripting 85.6  ms
+
+Loop + Map X6:
+Rendering 154.0 ms
+Painting  77.7  ms
+Scripting 13.8  ms
+
+ADD
+------------------------
+Loop X6:
+Rendering 209.4 ms
+Painting  198.0 ms
+Scripting 78.6 ms
+
+Loop + Map X6:
+Rendering 100.5 ms
+Painting  44.3  ms
+Scripting 101.6 ms

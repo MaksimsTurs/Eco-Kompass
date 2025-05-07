@@ -1,0 +1,62 @@
+/* Layout */
+@import url(./src/css/flex-column.css);
+@import url(./src/css/flex-row.css);
+@import url(./src/css/about.css);
+@import url(./src/css/position.css);
+@import url(./src/css/reset.css);
+@import url(./src/css/variable.css);
+/* Elements */
+@import url(./src/element/button/Button.css);
+
+@font-face {
+	font-family: "Poppins Regular";
+	src: url(./src/font/Poppins-Regular.woff2);
+}
+
+@font-face {
+	font-family: "Poppins Semi Bold";
+	src: url(./src/font/Poppins-SemiBold.woff2);
+}
+
+@font-face {
+	font-family: "Poppins Thin";
+	src: url(./src/font/Poppins-Thin.woff2);
+}
+
+@font-face {
+	font-family: "Poppins Medium";
+	src: url(./src/font/Poppins-Medium.woff2);
+}
+
+@font-face {
+	font-family: "Poppins Light";
+	src: url(./src/font/Poppins-Light.woff2);
+}
+
+.ecokompass_content_container {
+	transition: left var(--var-transition-very-slow) ease-in;
+	position: absolute;
+	overflow-y: scroll;
+	width: 100%;
+	left: 0%;
+	top: 0%;
+}
+
+.ecokompass_content_container::-webkit-scrollbar {
+	display: none;
+}
+
+.ecokompass_container_content {
+	padding: 0 var(--var-padding-l) var(--var-padding-l) var(--var-padding-l);
+}
+
+.ecokompass_copyright {
+	padding-top: var(--var-padding-m);
+	margin-top: var(--var-padding-l);
+	border-top: 1px solid var(--var-black-medium-transparent);
+}
+
+.ecokompass_content_hidden {
+	transition: left var(--var-transition-very-slow) ease;
+	left: -110%;
+}

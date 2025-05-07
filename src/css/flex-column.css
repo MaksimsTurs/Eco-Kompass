@@ -1,0 +1,20 @@
+/*================================*/
+
+.flex-c-n-n-m {
+	gap: var(--var-gap-m);
+	display: flex;
+	flex-direction: column;
+}
+
+/*================================*/
+
+.flex-c-n-n-n {
+	display: flex;
+	flex-direction: column;
+}
+
+.flex-c-n-n-xs {
+	gap: var(--var-gap-xs);
+	display: flex;
+	flex-direction: column;
+}
