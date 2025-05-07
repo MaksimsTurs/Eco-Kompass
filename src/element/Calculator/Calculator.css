@@ -1,6 +1,8 @@
 @import url(../Empty/Empty.css);
 @import url(../Text-Area/TextArea.css);
 @import url(../Text-Input/TextInput.css);
+@import url(../Checkbox/Checkbox.css);
+@import url(../Select/Select.css);
 @import url(../List/List.css);
 
 .ecokompass_calculator_container {
@@ -16,7 +18,6 @@
 .ecokompass_container {
 	box-shadow: 1px 1px 5px 3px var(--var-dark-silver);
 	background-color: #ffffff;
-	overflow: hidden;
 }
 
 .ecokompass_container > h5 {

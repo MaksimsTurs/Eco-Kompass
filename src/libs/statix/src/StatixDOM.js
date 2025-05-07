@@ -129,6 +129,7 @@ class StatixDOM {
 		}
 		
 		this.#mElementsIndex--;
+		this.#mProcessedElementCopy = null;
 
 		return element;
 	}
@@ -139,6 +140,7 @@ class StatixDOM {
 	reset() {
 		this.#mElementsIndex--;
 		this.#mElements = [];
+		this.#mProcessedElementCopy = null;
 	}
 	/**
 	 *	@param   {string} text

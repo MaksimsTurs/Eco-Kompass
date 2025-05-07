@@ -35,15 +35,15 @@ function onUpdate(instance, isOpen) {
 		statixDOM
 			.root()
 			.query(".ecokompass_calculator_container")
-			.removeClass("ecokompass_content_hidden")
 			.focus()
+			.removeClass("ecokompass_content_hidden")
 			.reset();
 	} else {
 		statixDOM
 			.root()
 			.query(".ecokompass_about_container")
-			.removeClass("ecokompass_content_hidden")
 			.focus()
+			.removeClass("ecokompass_content_hidden")
 			.reset();
 		statixDOM
 			.root()

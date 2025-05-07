@@ -1,4 +1,5 @@
 import List from "../List/List.js";
+import Select from "../Select/Select.js";
 
 import statix from "../../libs/statix/src/statix.core.js";
 
@@ -17,6 +18,30 @@ const ecoDescriptionInput = ecoKompassForm.querySelector('[name="description"]')
 // Statix Elements
 const list = List("#ecokompass_list");
 
+const selectOptions = [{ key: "Einzelfall", value: 0 }, { key: "Geduldet", value: 0.5 }, { key: "Systemisch", value: 1 }];
+const selectElementIds = [
+	"#traditions-kult",
+	"#ablehnung-der-moderne",
+	"#widerspruchsverbot",
+	"#konseskult",
+	"#ablehnung-vom-fremden",
+	"#elitendenken",
+	"#heldentum-verherrlichen",
+	"#machismus",
+	"#selektiver-populismus",
+	"#neuspruch-vereinfachung",
+	"#nationalismus",
+	"#feindbild",
+	"#massenkontrolle",
+	"#angst-als-macht",
+	"#medieneinfluss"
+];
+const selectStatixInstances = [];
+
+for(let index = 0; index < selectElementIds.length; index++) {
+	selectStatixInstances.push(Select({ items: selectOptions, id: selectElementIds[index] }));
+}
+
 list.setState(JSON.parse(localStorage.getItem("ecokompass") || "[]"));
 
 ecoKompassForm.addEventListener("submit", createNewListItem);
@@ -34,15 +59,12 @@ function createNewListItem(event) {
 
 	for(let index = 0; index < inputContainers.length; index++) {
 		const bInput = inputContainers[index].firstElementChild;
-		const pInput = inputContainers[index].lastElementChild;
 
 		const b = Number(bInput.value) || 0;
-		const p = Number(pInput.value) || 0;
 
-		newListItem.sum += p * b * G_FACTOR[inputContainers[index].dataset.factorKey];
+		newListItem.sum += selectStatixInstances[index].getState().selected * b * G_FACTOR[inputContainers[index].dataset.factorKey];
 
 		bInput.value = "";
-		pInput.value = "";
 	}
 
 	ecoTitleInput.value = "";
@@ -59,7 +81,7 @@ function createNewListItem(event) {
 	} else {
 		newListItem.colorLevel = G_WARNING_LVL.OK;
 	}
-	
+
 	list.setState(curr => {
 		const updatedList = [...curr, newListItem];
 

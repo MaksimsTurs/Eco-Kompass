@@ -66,14 +66,15 @@
 	/* BORDER RADIUS */
 	/* COLOR */
 	--var-white-hight-transparent: #ffffff4d;
-	--var-black-medium-transparent: rgba(0, 0, 0, 0.5);
+	--var-black-medium-transparent: #00000080;
+	--var-silver-low-transparent: #333333c2;
+	--var-silver-medium-transparent: #c0c0c080;
 
 	--var-link-color: #00255d;
 
 	--var-dark-red: #731414;
 	--var-dark-silver: #333333c2;
 	--var-dark-red-trasparent: #7314144d;
-	--var-silver-transparent: #c0c0c080;
 	/* COLOR */
 	/* TRANSITION TIME */
 	--var-transition-fast: 0.2s;
