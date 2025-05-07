@@ -6,7 +6,7 @@
 @import url(./src/css/reset.css);
 @import url(./src/css/variable.css);
 /* Elements */
-@import url(./src/element/button/Button.css);
+@import url(./src/element/Button/Button.css);
 
 @font-face {
 	font-family: "Poppins Regular";
