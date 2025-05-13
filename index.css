@@ -6,6 +6,7 @@
 @import url(./src/css/reset.css);
 @import url(./src/css/variable.css);
 /* Elements */
+@import url(./src/element/Error/Error.css);
 @import url(./src/element/Button/Button.css);
 
 @font-face {
@@ -59,4 +60,14 @@
 .ecokompass_content_hidden {
 	transition: left var(--var-transition-very-slow) ease;
 	left: -110%;
+}
+
+.ecokompass_tutorial_container {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+}
+
+.ecokompass_tutorial_container > img {
+	width: 100%;
+	height: 100%;
 }

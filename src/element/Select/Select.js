@@ -1,72 +1,81 @@
 import statix from "../../libs/statix/src/statix.core.js";
 
+const G_STATIX_SELECT_OPTION_VALUE = "statix_select_value";
+
 export default function Select(props) {
-	const state = { items: props?.items, isOpen: false, selected: null };
 	const instance = new statix.Statix();
 	const statixDOM = instance.getStatixDOM();
 
-	statixDOM.setRootBySelector(props.id);
-	statixDOM
-		.root()
-		.addEvent("click", toggleSelectVisibility)
-		.reset();
+	const optionsSignal = instance.signal(props.options);
+	const isSelectOpenSignal = instance.signal(false);
+	const selectedSignal = instance.signal(props.default);
 
-	instance.onUpdate(onUpdate);
-	instance.setState(state);
+	statixDOM.setRoot(`[data-${statix.CONST.DATASET_BIND_ID}="${props.bindSelector}"]`);
+	statixDOM.root().addClass(props.className).addEvent("click", instance.shareSignalToEvent({ selectedSignal, isSelectOpenSignal }, handleSelectOptionClick));
 
-	return instance;
+	isSelectOpenSignal.subscribe(renderIsSelectOpen);
+
+	optionsSignal.subscribe(renderSelectOptions);
+	optionsSignal.emit();
+
+	selectedSignal.subscribe(renderSelectedOption);
+	selectedSignal.emit();
+
+	return { val: selectedSignal.val, reset: __reset__(selectedSignal, props.default) };
 }
 
-function onUpdate(instance, curr, prev) {
+function __reset__(selectedSignal, defaultValue) {
+	return function() {
+		selectedSignal.set(defaultValue);
+	}
+}
+
+function renderSelectedOption(instance, curr, _prev) {
+	instance
+		.getStatixDOM()
+		.root()
+		.query(".statix-select_selected")
+		.text(curr.text);
+}
+
+function renderIsSelectOpen(instance, _curr, _prev) {
+	instance
+		.getStatixDOM()
+		.root()
+		.query(".statix-select_list")
+		.toggleClass("statix-select_list_open");
+}
+
+function handleSelectOptionClick(signals, _nstance, event) {
+	const { selectedSignal, isSelectOpenSignal } = signals;
+
+	// Handle click on option.
+	if(event.target !== event.currentTarget) {
+		selectedSignal.set({ text: event.target.textContent, value: event.target.dataset[G_STATIX_SELECT_OPTION_VALUE] });
+	}
+
+	isSelectOpenSignal.set(curr => !curr);
+}
+
+function renderSelectOptions(instance, curr, _prev) {
+	const STATIX_SELECT_LIST_SELECTOR = ".statix-select_list";
+
 	let index = 0;
-	let length = curr.items.length;
-
-	let optionWithBiggesLength = 0;
+	let length = curr.length;
 
 	const statixDOM = instance.getStatixDOM();
-	const fragment = document.createDocumentFragment();
+	const fragment = statixDOM.fragment();
 
-	if(curr.items.length !== prev?.items?.length) {
-		while(index < length) {
-			fragment
-				.appendChild(statixDOM
+	while(index < length) {
+		fragment
+			.addChilds([
+				statixDOM
 					.element("li")
-					.dataset("select_value", curr.items[index].value)
-					.dataset(statix.CONST.DATASET_KEY, curr.items[index].key)
-					.text(curr.items[index].key)
-					.create());
-				
-			if(curr.items[index].key.length > optionWithBiggesLength) {
-				optionWithBiggesLength = curr.items[index].key.length;
-			}
-	
-			index++;
-		}
+					.dataset([{ [G_STATIX_SELECT_OPTION_VALUE]: curr[index].value }])
+					.text(curr[index].text)
+				]);
+		index++;
 	}
 
-	statixDOM
-		.root()
-		.query(".select_input_list")
-		.addChilds([fragment])
-		.reset();
-}
-
-function toggleSelectVisibility(instance, event) {
-	const statixDOM = instance.getStatixDOM();
-	const state = instance.getState();
-
-	if(!state.isOpen) {
-		instance.setState(prev => ({...prev, isOpen: true }));
-	} else {
-		// Handle click on option.
-		if(event.target !== event.currentTarget) {
-			statixDOM.root().query(".select_curr_value").text(event.target.textContent).reset();
-			statixDOM.root().query(".select_placeholder").addClass("select_placeholder_hidden").reset();
-			instance.setState(prev => ({...prev, isOpen: !prev.isOpen, selected: +event.target.dataset["select_value"] }));
-		} else if(!state.selected) {
-			statixDOM.root().query(".select_placeholder").removeClass("select_placeholder_hidden").reset();
-		}
-	}
-
-	event.currentTarget.querySelector(".select_input_list").classList.toggle("select_input_list_open");
+	statixDOM.root().query(STATIX_SELECT_LIST_SELECTOR).addChilds([fragment]);
 }

@@ -1,0 +1,22 @@
+.error_message {
+	padding: var(--var-padding-xs) var(--var-margin-l);
+	border: 1px solid #500;
+	width: 100%;
+	text-align: center;
+	color: #500;
+	box-shadow: 2px 2px 0 0 #500;
+	display: none;
+}
+
+.error_message_visible {
+	display: block;
+}
+
+.error_input {
+	border-bottom: 1px solid #500 !important;
+	background-color: #5500001a !important;
+}
+
+.error_input::placeholder {
+	color: #500 !important;
+}

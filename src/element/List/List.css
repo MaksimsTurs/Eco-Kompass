@@ -14,7 +14,7 @@
 
 .ecokompass_list_item_title::before {
 	transition: opacity var(--var-transition-fast) ease;
-	background-color: var(--var-silver-transparent);
+	background-color: var(--var-silver-medium-transparent);
 	content: "";
 	position: absolute;
 	left: 0;

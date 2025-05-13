@@ -3,46 +3,35 @@ import Select from "../Select/Select.js";
 
 import statix from "../../libs/statix/src/statix.core.js";
 
+import isInRange from "../../utils/isInRange.utils.js";
+
 import { 
 	G_FACTOR 
-} from "/NUMBER.const.js";
+} from "../../../NUMBER.const.js";
 import { 
 	G_WARNING_LVL 
-} from "/STRING.const.js";
+} from "../../../STRING.const.js";
 
 // DOM Elements
 const ecoKompassForm = document.getElementById("ecokompass_form");
-const inputContainers = ecoKompassForm.querySelectorAll("[data-factor-key]");
+const ecoKompassFormInputs = ecoKompassForm.querySelectorAll("input, textarea");
+
 const ecoTitleInput = ecoKompassForm.querySelector('[name="title"]');
 const ecoDescriptionInput = ecoKompassForm.querySelector('[name="description"]');
-// Statix Elements
-const list = List("#ecokompass_list");
 
-const selectOptions = [{ key: "Einzelfall", value: 0 }, { key: "Geduldet", value: 0.5 }, { key: "Systemisch", value: 1 }];
-const selectElementIds = [
-	"#traditions-kult",
-	"#ablehnung-der-moderne",
-	"#widerspruchsverbot",
-	"#konseskult",
-	"#ablehnung-vom-fremden",
-	"#elitendenken",
-	"#heldentum-verherrlichen",
-	"#machismus",
-	"#selektiver-populismus",
-	"#neuspruch-vereinfachung",
-	"#nationalismus",
-	"#feindbild",
-	"#massenkontrolle",
-	"#angst-als-macht",
-	"#medieneinfluss"
-];
+const list = List({ selector: "#ecokompass_list", data: JSON.parse(localStorage.getItem("ecokompass") || "[]") });
+
 const selectStatixInstances = [];
 
-for(let index = 0; index < selectElementIds.length; index++) {
-	selectStatixInstances.push(Select({ items: selectOptions, id: selectElementIds[index] }));
-}
-
-list.setState(JSON.parse(localStorage.getItem("ecokompass") || "[]"));
+ecoKompassForm
+	.querySelectorAll(".statix-select_input_container")
+	.forEach(function(select) {
+		selectStatixInstances.push(Select({ 
+			options: [{ text: "Einzelfall", value: 0 }, { text: "Geduldet", value: 0.5 }, { text: "Systemisch", value: 1 }],
+			bindSelector: select.dataset[statix.CONST.DATASET_BIND_ID],
+			default: { text: "P", value: 0 }
+		}));
+	});
 
 ecoKompassForm.addEventListener("submit", createNewListItem);
 
@@ -51,20 +40,53 @@ function createNewListItem(event) {
 
 	const newListItem = {
 		id: statix.Utils.generateRandomValue(),
-		title: ecoTitleInput.value || `#${list.getState().length + 1}`,
+		title: ecoTitleInput.value || `#${list.itemsSignal.val().length + 1}`,
 		description: ecoDescriptionInput.value,
 		colorLevel:  "",
 		sum: 0
 	};
 
-	for(let index = 0; index < inputContainers.length; index++) {
-		const bInput = inputContainers[index].firstElementChild;
+	let index = 2;
+	let statixInstanceIndex = 0;
 
-		const b = Number(bInput.value) || 0;
+	const length = ecoKompassFormInputs.length;
 
-		newListItem.sum += selectStatixInstances[index].getState().selected * b * G_FACTOR[inputContainers[index].dataset.factorKey];
+	while(index < length) {
+		const PInput = selectStatixInstances[statixInstanceIndex++];
+		const BInput = ecoKompassFormInputs.item(index + 3);
 
-		bInput.value = "";
+		const P = +PInput.val().value;
+		const B = Number(BInput.value) || 0;
+
+		const errorMessageP = BInput.parentNode.parentNode.querySelector(".error_message");
+
+		if(!isInRange(B, +BInput.min, +BInput.max) && !BInput.classList.contains("error_input")) {
+			BInput.classList.add("error_input");
+			errorMessageP.textContent = "B ist zu groß oder zu klein!";
+			errorMessageP.classList.add("error_message_visible");
+			return;
+		} else if(BInput.classList.contains("error_input")) {
+			BInput.classList.remove("error_input");
+			errorMessageP.classList.remove("error_message_visible");
+		}
+
+		const FInput = ecoKompassFormInputs.item(index);
+		const VInput = ecoKompassFormInputs.item(index + 1);
+		const GInput = ecoKompassFormInputs.item(index + 2);
+	
+		const F = +FInput.checked;
+		const V = +VInput.checked;
+		const G = +GInput.checked;		
+
+		newListItem.sum += ((F * G_FACTOR.FREIHEIT) + (V * G_FACTOR.VERSTAND) + (G * G_FACTOR.GLEICHHEIT)) * P * B;
+
+		PInput.reset();
+		BInput.value = "";
+		FInput.checked = false;
+		VInput.checked = false;
+		GInput.checked = false;
+
+		index += 4;
 	}
 
 	ecoTitleInput.value = "";
@@ -82,9 +104,9 @@ function createNewListItem(event) {
 		newListItem.colorLevel = G_WARNING_LVL.OK;
 	}
 
-	list.setState(curr => {
+	list.itemsSignal.set(function(curr) {
 		const updatedList = [...curr, newListItem];
-
+	
 		localStorage.setItem("ecokompass", JSON.stringify(updatedList));
 		
 		return updatedList;

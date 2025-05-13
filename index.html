@@ -5,7 +5,8 @@
 	<meta name="description" content="Dein Werkzeug, um die Wahrheit zu sehen.">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="./index.css">
-	<link rel="icon" type="image/x-icon" href="./favico.png">
+	<link rel="icon" type="image/x-icon" href="./favico32x32.png">
+	<link rel="manifest" href="manifest.json" />
 	<title>Eco Kompass</title>
 </head>
 <body id="app">
@@ -66,7 +67,7 @@
 					Wir sind zwei Menschen, die den Eco-Kompass gebaut haben – mit Pseudonym, aus Gründen. Wir machen das für dich, für die Zukunft, für eine Welt ohne Angst. Aber wir brauchen dich! Aufklärung funktioniert nur, wenn viele mitmachen.
 					Starte jetzt: Klick auf „Teste den Kompass“ und finde heraus, wo wir stehen. Die Zukunft gehört uns – wenn wir sie gestalten.
 				</p>
-				<button id="ecokompass_calculator_button" class="button">Teste den Kompass</button>
+				<button id="ecokompass_description_button" class="button">Teste den Kompass</button>
 			</div>
 			<section class="ecokompass_copyright">© 2025 <a target="_blank" href="https://x.com/schwarzdornig">Schwarzdornig</a> und <a target="_blank" href="https://x.com/MaksimsTurs">дрочила хуев 🚩🌹</a>. Alle Rechte vorbehalten.</section>
 		</div>
@@ -77,184 +78,504 @@
 				<h5>Übersicht</h5>
 				<div class="ecokompass_container_content">
 					<div class="flex-r-n-n-xs">
-						<p class="ecokompass_formula_item">B:</p>
+						<p class="ecokompass_bold">B:</p>
 						<p>Bedeutet wie stark etwas ausgeprägt ist zwischen 1 bis 10.</p>
 					</div>
-					<div class="flex-r-n-n-xs">
-						<p class="ecokompass_formula_item">P:</p>
+					<div>
+						<p class="ecokompass_bold">P:</p>
 						<p>Heißt ob etwas selten vorkommt, geduldet wird, oder systemisch ist (also zB gesetzlich).</p>
 					</div>
 				</div>
 			</section>
-			<form id="ecokompass_form" class="ecokompass_container">
+			<section class="flex-c-n-n-xs ecokompass_container">
+				<h5>Bedienungsanleitung für den Eco-Kompaß</h5>
+				<div class="flex-c-n-n-m ecokompass_container_content">
+					<p>
+						Prüfe Nachrichten auf autoritäre Tendenzen. 
+						Inspiriert von Umberto Ecos 14 Merkmalen plus Medieneinfluss (15). 
+						Offline, anonym.
+					</p>
+					<div>
+						<p class="ecokompass_bold">Schritte:</p>
+						<p>
+							Wähle eine Nachricht aus seriösen Quellen: 
+							<a target="_blank" href="http://amnesty.org">Amnesty</a>,
+							<a target="_blank" href="http://un.org">UN</a> und
+							<a target="_blank" href="http://katapult-magazin.de">Katapult</a>.
+						</p>
+					</div>
+					<p>Ordne sie einem oder mehreren der 15 Merkmale thematisch zu.</p>
+					<div>
+						<p class="ecokompass_bold">Prüfe pro Merkmal:</p>
+						<div class="flex-r-n-n-xs">
+							<p>F (Freiheit)</p> bedroht? Ja oder nein?
+						</div>
+						<div class="flex-r-n-n-xs">
+							<p>V (Vernunft)</p> bedroht? Ja oder nein?
+						</div>
+						<div class="flex-r-n-n-xs">
+							<p>G (Gleichheit)</p> bedroht? Ja oder nein?
+						</div>
+					</div>
+					<div class="flex-r-n-n-xs">
+						Setze<p class="ecokompass_bold"> B </p>"Bedeutung" Skala 1 – 10, subjektives Empfinden.
+					</div>
+					<div class="flex-r-n-n-xs">
+						Setze <p class="ecokompass_bold"> P </p>"Präsenz" Einzelfall(0), geduldet(0.5), systemisch(1). 
+					</div>
+					<p>Recherchiere dazu, redet miteinander!</p>
+					<div>
+						<p class="ecokompass_bold">Berechne:</p> 
+						<div style="display: ruby;">(<p class="ecokompass_bold">F</p> × 50 + <p class="ecokompass_bold">V</p> × 30 + <p class="ecokompass_bold">G</p> × 20) × <p class="ecokompass_bold">B</p> × <p class="ecokompass_bold">P</p> pro Merkmal, addiere Scores.</div>
+					</div>
+					<div>
+						<p class="ecokompass_bold">Ergebnis:</p>
+						<p>
+							wird farblich abgestuft (dunkelgrün bis dunkelrot) dargestellt.
+						</p>
+					</div>
+					<div>
+						<p class="ecokompass_bold">Intention:</p>
+						<p>
+							U. Eco entlarvte Manipulation. 
+							Der Kompaß fördert klares Denken, basierend auf Aufklärungswerten: Freiheit, Vernunft, Gleichheit (1789). 
+							Freiheit wiegt schwer, da sie alles ermöglicht.
+						</p>
+					</div>
+					<div>
+						<p class="ecokompass_bold">Offline verwendung:</p>
+						<p>
+							Hier ist eine kleine anleitung wie man Eco - Kompaß offline verwenden kann, am ende wird bei euch auf Handy, PC oder Laptop eine Verknüpfung erstellt.
+						</p>
+						<div class="flex-c-n-n-n-m">
+							<div>
+								<p class="ecokompass_bold">Google Chrome (Laptop, PC)</p>
+								<div class="ecokompass_tutorial_container">
+									<img src="./src/img/PWA_Chrome_1.png" alt="PWA Google Chrome (Laptop, PC)">
+									<img src="./src/img/PWA_Chrome_2.png" alt="PWA Google Chrome (Laptop, PC)">
+									<img src="./src/img/PWA_Chrome_3.png" alt="PWA Google Chrome (Laptop, PC)">
+								</div>
+							</div>
+							<div>
+								<p class="ecokompass_bold">Microsoft Edge (Laptop, PC)</p>
+								<div class="ecokompass_tutorial_container">
+									<img src="./src/img/Microsoft_Edge_1.png" alt="PWA Microsoft Edge (Laptop, PC)">
+									<img src="./src/img/Microsoft_Edge_2.png" alt="PWA Microsoft Edge (Laptop, PC)">
+									<img src="./src/img/Microsoft_Edge_3.png" alt="PWA Microsoft Edge (Laptop, PC)">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<form id="ecokompass_form" class="ecokompass_container" novalidate>
 				<h5>Überschrift und Anmerkung</h5>
 				<section class="ecokompass_container_content flex-c-n-n-xs">
 					<input name="title" class="text_input" placeholder="Überschrift" type="text" autocomplete="on">
 					<textarea name="description" class="text_area" rows="3" placeholder="Anmerkung für diese berechnung..." autocomplete="on"></textarea>
 					<div class="flex-r-sb-c-xs text_input_container">
 						<label>Traditionskult</label>
-						<div data-factor-key="TRADITIONSKULT" class="flex-r-n-n-xs">
-							<input class="checkbox_input" type="checkbox">
-							<input class="text_input" placeholder="B" type="number" min="0" max="10" step="1">
-							<div id="traditions-kult" class="select_input">
-								<p class="select_curr_value"></p>
-								<p class="select_placeholder">P</p>
-								<ul class="select_input_list absolute-tl"></ul>
+						<div class="flex-c-n-n-xs">
+							<div class="flex-r-n-n-xs">
+								<label class="flex-c-c-c-n checkbox_input_container">
+									<p>F</p>
+									<input class="checkbox_input" type="checkbox">
+								</label>
+								<label class="flex-c-c-c-n checkbox_input_container">
+									<p>V</p>
+									<input class="checkbox_input" type="checkbox">
+								</label>
+								<label class="flex-c-c-c-n checkbox_input_container">
+									<p>G</p>
+									<input class="checkbox_input" type="checkbox">
+								</label>
 							</div>
+							<div class="flex-r-n-n-xs">
+								<input class="text_input" placeholder="B" type="number" min="0" max="10" step="1">
+								<div data-statix_bind="TRADITIONSKULT" class="statix-select_input_container">
+									<p class="statix-select_selected"></p>
+									<ul class="statix-select_list absolute-tl"></ul>
+								</div>
+							</div>
+							<p class="error_message"></p>
 						</div>
 					</div>
 					<div class="flex-r-sb-c-xs text_input_container">
 						<label>Ablehnung der Moderne</label>
-						<div data-factor-key="ABLEHNUNG_DER_MODERNE"  class="flex-r-n-n-xs">
-							<input class="text_input" placeholder="B" type="number" min="0" max="10" step="1">
-							<div id="ablehnung-der-moderne" class="select_input">
-								<p class="select_curr_value"></p>
-								<p class="select_placeholder">P</p>
-								<ul class="select_input_list absolute-tl"></ul>
+						<div class="flex-c-n-n-xs">
+							<div class="flex-r-n-n-xs">
+								<label class="flex-c-c-c-n checkbox_input_container">
+									<p>F</p>
+									<input class="checkbox_input" type="checkbox">
+								</label>
+								<label class="flex-c-c-c-n checkbox_input_container">
+									<p>V</p>
+									<input class="checkbox_input" type="checkbox">
+								</label>
+								<label class="flex-c-c-c-n checkbox_input_container">
+									<p>G</p>
+									<input class="checkbox_input" type="checkbox">
+								</label>
 							</div>
+							<div class="flex-r-n-n-xs">
+								<input class="text_input" placeholder="B" type="number" min="0" max="10" step="1">
+								<div data-statix_bind="ABLEHNUNG_DER_MODERNE" class="statix-select_input_container">
+									<p class="statix-select_selected"></p>
+									<ul class="statix-select_list absolute-tl"></ul>
+								</div>								
+							</div>
+							<p class="error_message"></p>
 						</div>
 					</div>
 					<div class="flex-r-sb-c-xs text_input_container">
 						<label>Widerspruchsverbot</label>
-						<div data-factor-key="WIDERSPRUCHSVERBOT" class="flex-r-n-n-xs">
-							<input class="text_input" placeholder="B" type="number" min="0" max="10" step="1">
-							<div id="widerspruchsverbot" class="select_input">
-								<p class="select_curr_value"></p>
-								<p class="select_placeholder">P</p>
-								<ul class="select_input_list absolute-tl"></ul>
+						<div class="flex-c-n-n-xs">
+							<div class="flex-r-n-n-xs">
+								<label class="flex-c-c-c-n checkbox_input_container">
+									<p>F</p>
+									<input class="checkbox_input" type="checkbox">
+								</label>
+								<label class="flex-c-c-c-n checkbox_input_container">
+									<p>V</p>
+									<input class="checkbox_input" type="checkbox">
+								</label>
+								<label class="flex-c-c-c-n checkbox_input_container">
+									<p>G</p>
+									<input class="checkbox_input" type="checkbox">
+								</label>
 							</div>
+							<div class="flex-r-n-n-xs">
+								<input class="text_input" placeholder="B" type="number" min="0" max="10" step="1">
+								<div data-statix_bind="WIDERSPRUCHSVERBOT" class="statix-select_input_container">
+									<p class="statix-select_selected"></p>
+									<ul class="statix-select_list absolute-tl"></ul>
+								</div>
+							</div>
+							<p class="error_message"></p>
 						</div>
 					</div>
 					<div class="flex-r-sb-c-xs text_input_container">
 						<label>Konsenskult</label>
-						<div data-factor-key="KONSENSKULT" class="flex-r-n-n-xs">
-							<input class="text_input" placeholder="B" type="number" min="0" max="10" step="1">
-							<div id="konseskult" class="select_input">
-								<p class="select_curr_value"></p>
-								<p class="select_placeholder">P</p>
-								<ul class="select_input_list absolute-tl"></ul>
+						<div data-factor-key="KONSENSKULT" class="flex-c-n-n-xs">
+							<div class="flex-r-n-n-xs">
+								<label class="flex-c-c-c-n checkbox_input_container">
+									<p>F</p>
+									<input class="checkbox_input" type="checkbox">
+								</label>
+								<label class="flex-c-c-c-n checkbox_input_container">
+									<p>V</p>
+									<input class="checkbox_input" type="checkbox">
+								</label>
+								<label class="flex-c-c-c-n checkbox_input_container">
+									<p>G</p>
+									<input class="checkbox_input" type="checkbox">
+								</label>
 							</div>
+							<div class="flex-r-n-n-xs">
+								<input class="text_input" placeholder="B" type="number" min="0" max="10" step="1">
+								<div data-statix_bind="KONSENSKULT" class="statix-select_input_container">
+									<p class="statix-select_selected"></p>
+									<ul class="statix-select_list absolute-tl"></ul>
+								</div>
+							</div>
+							<p class="error_message"></p>
 						</div>
 					</div>
 					<div class="flex-r-sb-c-xs text_input_container">
 						<label>Ablehnung vom Fremden</label>
-						<div data-factor-key="ABLEHNUNG_VOM_FREMDEM" class="flex-r-n-n-xs">
-							<input class="text_input" placeholder="B" type="number" min="0" max="10" step="1">
-							<div id="ablehnung-vom-fremden" class="select_input">
-								<p class="select_curr_value"></p>
-								<p class="select_placeholder">P</p>
-								<ul class="select_input_list absolute-tl"></ul>
+						<div class="flex-c-n-n-xs">
+							<div class="flex-r-n-n-xs">
+								<label class="flex-c-c-c-n checkbox_input_container">
+									<p>F</p>
+									<input class="checkbox_input" type="checkbox">
+								</label>
+								<label class="flex-c-c-c-n checkbox_input_container">
+									<p>V</p>
+									<input class="checkbox_input" type="checkbox">
+								</label>
+								<label class="flex-c-c-c-n checkbox_input_container">
+									<p>G</p>
+									<input class="checkbox_input" type="checkbox">
+								</label>
 							</div>
+							<div class="flex-r-n-n-xs">
+								<input class="text_input" placeholder="B" type="number" min="0" max="10" step="1">
+								<div data-statix_bind="ABLEHNUNG_VOM_FREMDEM" class="statix-select_input_container">
+									<p class="statix-select_selected"></p>
+									<ul class="statix-select_list absolute-tl"></ul>
+								</div>
+							</div>
+							<p class="error_message"></p>
 						</div>
 					</div>
 					<div class="flex-r-sb-c-xs text_input_container">
 						<label>Elitedenken</label>
-						<div data-factor-key="ELITENDENKEN" class="flex-r-n-n-xs">
-							<input class="text_input" placeholder="B" type="number" min="0" max="10" step="1">
-							<div id="elitendenken" class="select_input">
-								<p class="select_curr_value"></p>
-								<p class="select_placeholder">P</p>
-								<ul class="select_input_list absolute-tl"></ul>
+						<div class="flex-c-n-n-xs">
+							<div class="flex-r-n-n-xs">
+								<label class="flex-c-c-c-n checkbox_input_container">
+									<p>F</p>
+									<input class="checkbox_input" type="checkbox">
+								</label>
+								<label class="flex-c-c-c-n checkbox_input_container">
+									<p>V</p>
+									<input class="checkbox_input" type="checkbox">
+								</label>
+								<label class="flex-c-c-c-n checkbox_input_container">
+									<p>G</p>
+									<input class="checkbox_input" type="checkbox">
+								</label>
 							</div>
+							<div class="flex-r-n-n-xs">
+								<input class="text_input" placeholder="B" type="number" min="0" max="10" step="1">
+								<div data-statix_bind="ELITENDENKEN" class="statix-select_input_container">
+									<p class="statix-select_selected"></p>
+									<ul class="statix-select_list absolute-tl"></ul>
+								</div>
+							</div>
+							<p class="error_message"></p>
 						</div>
 					</div>
 					<div class="flex-r-sb-c-xs text_input_container">
 						<label>Heldentum verherrlichen</label>
-						<div data-factor-key="HELDENTUM_VERHERRLICHEN" class="flex-r-n-n-xs">
-							<input class="text_input" placeholder="B" type="number" min="0" max="10" step="1">
-							<div id="heldentum-verherrlichen" class="select_input">
-								<p class="select_curr_value"></p>
-								<p class="select_placeholder">P</p>
-								<ul class="select_input_list absolute-tl"></ul>
+						<div class="flex-c-n-n-xs">
+							<div class="flex-r-n-n-xs">
+								<label class="flex-c-c-c-n checkbox_input_container">
+									<p>F</p>
+									<input class="checkbox_input" type="checkbox">
+								</label>
+								<label class="flex-c-c-c-n checkbox_input_container">
+									<p>V</p>
+									<input class="checkbox_input" type="checkbox">
+								</label>
+								<label class="flex-c-c-c-n checkbox_input_container">
+									<p>G</p>
+									<input class="checkbox_input" type="checkbox">
+								</label>
 							</div>
+							<div class="flex-r-n-n-xs">
+								<input class="text_input" placeholder="B" type="number" min="0" max="10" step="1">
+								<div data-statix_bind="HELDENTUM_VERHERRLICHEN" class="statix-select_input_container">
+									<p class="statix-select_selected"></p>
+									<ul class="statix-select_list absolute-tl"></ul>
+								</div>
+							</div>
+							<p class="error_message"></p>
 						</div>
 					</div>
 					<div class="flex-r-sb-c-xs text_input_container">
 						<label>Machismus</label>
-						<div data-factor-key="MACHISMUS" class="flex-r-n-n-xs">
-							<input class="text_input" placeholder="B" type="number" min="0" max="10" step="1">
-							<div id="machismus" class="select_input">
-								<p class="select_curr_value"></p>
-								<p class="select_placeholder">P</p>
-								<ul class="select_input_list absolute-tl"></ul>
+						<div class="flex-c-n-n-xs">
+							<div class="flex-r-n-n-xs">
+								<label class="flex-c-c-c-n checkbox_input_container">
+									<p>F</p>
+									<input class="checkbox_input" type="checkbox">
+								</label>
+								<label class="flex-c-c-c-n checkbox_input_container">
+									<p>V</p>
+									<input class="checkbox_input" type="checkbox">
+								</label>
+								<label class="flex-c-c-c-n checkbox_input_container">
+									<p>G</p>
+									<input class="checkbox_input" type="checkbox">
+								</label>
 							</div>
+							<div class="flex-r-n-n-xs">
+								<input class="text_input" placeholder="B" type="number" min="0" max="10" step="1">
+								<div data-statix_bind="MACHISMUS" class="statix-select_input_container">
+									<p class="statix-select_selected"></p>
+									<ul class="statix-select_list absolute-tl"></ul>
+								</div>
+							</div>
+							<p class="error_message"></p>
 						</div>
 					</div>
 					<div class="flex-r-sb-c-xs text_input_container">
 						<label>Selektiver Populismus</label>
-						<div data-factor-key="SELEKTIVER_POPULISMUS" class="flex-r-n-n-xs">
-							<input class="text_input" placeholder="B" type="number" min="0" max="10" step="1">
-							<div id="selektiver-populismus" class="select_input">
-								<p class="select_curr_value"></p>
-								<p class="select_placeholder">P</p>
-								<ul class="select_input_list absolute-tl"></ul>
+						<div class="flex-c-n-n-xs">
+							<div class="flex-r-n-n-xs">
+								<label class="flex-c-c-c-n checkbox_input_container">
+									<p>F</p>
+									<input class="checkbox_input" type="checkbox">
+								</label>
+								<label class="flex-c-c-c-n checkbox_input_container">
+									<p>V</p>
+									<input class="checkbox_input" type="checkbox">
+								</label>
+								<label class="flex-c-c-c-n checkbox_input_container">
+									<p>G</p>
+									<input class="checkbox_input" type="checkbox">
+								</label>
 							</div>
+							<div class="flex-r-n-n-xs">
+								<input class="text_input" placeholder="B" type="number" min="0" max="10" step="1">
+								<div data-statix_bind="SELEKTIVER_POPULISMUS" class="statix-select_input_container">
+									<p class="statix-select_selected"></p>
+									<ul class="statix-select_list absolute-tl"></ul>
+								</div>
+							</div>
+							<p class="error_message"></p>
 						</div>
 					</div>
 					<div class="flex-r-sb-c-xs text_input_container">
 						<label>Neusprech, Vereinfachung</label>
-						<div data-factor-key="NEUSPRECH_VEREINFACHUNG" class="flex-r-n-n-xs">
-							<input class="text_input" placeholder="B" type="number" min="0" max="10" step="1">
-							<div id="neuspruch-vereinfachung" class="select_input">
-								<p class="select_curr_value"></p>
-								<p class="select_placeholder">P</p>
-								<ul class="select_input_list absolute-tl"></ul>
+						<div class="flex-c-n-n-xs">
+							<div class="flex-r-n-n-xs">
+								<label class="flex-c-c-c-n checkbox_input_container">
+									<p>F</p>
+									<input class="checkbox_input" type="checkbox">
+								</label>
+								<label class="flex-c-c-c-n checkbox_input_container">
+									<p>V</p>
+									<input class="checkbox_input" type="checkbox">
+								</label>
+								<label class="flex-c-c-c-n checkbox_input_container">
+									<p>G</p>
+									<input class="checkbox_input" type="checkbox">
+								</label>
 							</div>
+							<div class="flex-r-n-n-xs">
+								<input class="text_input" placeholder="B" type="number" min="0" max="10" step="1">
+								<div data-statix_bind="NEUSPRECH_VEREINFACHUNG" class="statix-select_input_container">
+									<p class="statix-select_selected"></p>
+									<ul class="statix-select_list absolute-tl"></ul>
+								</div>
+							</div>
+							<p class="error_message"></p>
 						</div>
 					</div>
 					<div class="flex-r-sb-c-xs text_input_container">
 						<label>Nationalismus</label>
-						<div data-factor-key="NATIONALISMUS" class="flex-r-n-n-xs">
-							<input class="text_input" placeholder="B" type="number" min="0" max="10" step="1">
-							<div id="nationalismus" class="select_input">
-								<p class="select_curr_value"></p>
-								<p class="select_placeholder">P</p>
-								<ul class="select_input_list absolute-tl"></ul>
+						<div class="flex-c-n-n-xs">
+							<div class="flex-r-n-n-xs">
+								<label class="flex-c-c-c-n checkbox_input_container">
+									<p>F</p>
+									<input class="checkbox_input" type="checkbox">
+								</label>
+								<label class="flex-c-c-c-n checkbox_input_container">
+									<p>V</p>
+									<input class="checkbox_input" type="checkbox">
+								</label>
+								<label class="flex-c-c-c-n checkbox_input_container">
+									<p>G</p>
+									<input class="checkbox_input" type="checkbox">
+								</label>
 							</div>
+							<div class="flex-r-n-n-xs">
+								<input class="text_input" placeholder="B" type="number" min="0" max="10" step="1">
+								<div data-statix_bind="NATIONALISMUS" class="statix-select_input_container">
+									<p class="statix-select_selected"></p>
+									<ul class="statix-select_list absolute-tl"></ul>
+								</div>
+							</div>
+							<p class="error_message"></p>
 						</div>
 					</div>
 					<div class="flex-r-sb-c-xs text_input_container">
 						<label>Feindbild</label>
-						<div data-factor-key="FEINDBILD" class="flex-r-n-n-xs">
-							<input class="text_input" placeholder="B" type="number" min="0" max="10" step="1">
-							<div id="feindbild" class="select_input">
-								<p class="select_curr_value"></p>
-								<p class="select_placeholder">P</p>
-								<ul class="select_input_list absolute-tl"></ul>
+						<div class="flex-c-n-n-xs">
+							<div class="flex-r-n-n-xs">
+								<label class="flex-c-c-c-n checkbox_input_container">
+									<p>F</p>
+									<input class="checkbox_input" type="checkbox">
+								</label>
+								<label class="flex-c-c-c-n checkbox_input_container">
+									<p>V</p>
+									<input class="checkbox_input" type="checkbox">
+								</label>
+								<label class="flex-c-c-c-n checkbox_input_container">
+									<p>G</p>
+									<input class="checkbox_input" type="checkbox">
+								</label>
 							</div>
+							<div class="flex-r-n-n-xs">
+								<input class="text_input" placeholder="B" type="number" min="0" max="10" step="1">
+								<div data-statix_bind="FEINDBILD" class="statix-select_input_container">
+									<p class="statix-select_selected"></p>
+									<ul class="statix-select_list absolute-tl"></ul>
+								</div>								
+							</div>
+							<p class="error_message"></p>
 						</div>
 					</div>
 					<div class="flex-r-sb-c-xs text_input_container">
 						<label>Massenkontrolle</label>
-						<div data-factor-key="MASSENKONTROLLE" class="flex-r-n-n-xs">
-							<input class="text_input" placeholder="B" type="number" min="0" max="10" step="1">
-							<div id="massenkontrolle" class="select_input">
-								<p class="select_curr_value"></p>
-								<p class="select_placeholder">P</p>
-								<ul class="select_input_list absolute-tl"></ul>
+						<div class="flex-c-n-n-xs">
+							<div class="flex-r-n-n-xs">
+								<label class="flex-c-c-c-n checkbox_input_container">
+									<p>F</p>
+									<input class="checkbox_input" type="checkbox">
+								</label>
+								<label class="flex-c-c-c-n checkbox_input_container">
+									<p>V</p>
+									<input class="checkbox_input" type="checkbox">
+								</label>
+								<label class="flex-c-c-c-n checkbox_input_container">
+									<p>G</p>
+									<input class="checkbox_input" type="checkbox">
+								</label>
 							</div>
+							<div class="flex-r-n-n-xs">
+								<input class="text_input" placeholder="B" type="number" min="0" max="10" step="1">
+								<div data-statix_bind="MASSENKONTROLLE" class="statix-select_input_container">
+									<p class="statix-select_selected"></p>
+									<ul class="statix-select_list absolute-tl"></ul>
+								</div>
+							</div>
+							<p class="error_message"></p>
 						</div>
 					</div>
 					<div class="flex-r-sb-c-xs text_input_container">
 						<label>Angst als Macht</label>
-						<div data-factor-key="ANGST_ALS_MACHT" class="flex-r-n-n-xs">
-							<input class="text_input" placeholder="B" type="number" min="0" max="10" step="1">
-							<div id="angst-als-macht" class="select_input">
-								<p class="select_curr_value"></p>
-								<p class="select_placeholder">P</p>
-								<ul class="select_input_list absolute-tl"></ul>
+						<div class="flex-c-n-n-xs">
+							<div class="flex-r-n-n-xs">
+								<label class="flex-c-c-c-n checkbox_input_container">
+									<p>F</p>
+									<input class="checkbox_input" type="checkbox">
+								</label>
+								<label class="flex-c-c-c-n checkbox_input_container">
+									<p>V</p>
+									<input class="checkbox_input" type="checkbox">
+								</label>
+								<label class="flex-c-c-c-n checkbox_input_container">
+									<p>G</p>
+									<input class="checkbox_input" type="checkbox">
+								</label>
 							</div>
+							<div class="flex-r-n-n-xs">
+								<input class="text_input" placeholder="B" type="number" min="0" max="10" step="1">
+								<div data-statix_bind="ANGST_ALS_MACHT" class="statix-select_input_container">
+									<p class="statix-select_selected"></p>
+									<ul class="statix-select_list absolute-tl"></ul>
+								</div>
+							</div>
+							<p class="error_message"></p>
 						</div>
 					</div>
 					<div class="flex-r-sb-c-xs text_input_container">
 						<label>Medieneinfluss</label>
-						<div data-factor-key="MEDIENEINFLUESS" class="flex-r-n-n-xs">
-							<input class="text_input" placeholder="B" type="number" min="0" max="10" step="1">
-							<div id="medieneinfluss" class="select_input">
-								<p class="select_curr_value"></p>
-								<p class="select_placeholder">P</p>
-								<ul class="select_input_list absolute-tl"></ul>
+						<div class="flex-c-n-n-xs">
+							<div class="flex-r-n-n-xs">
+								<label class="flex-c-c-c-n checkbox_input_container">
+									<p>F</p>
+									<input class="checkbox_input" type="checkbox">
+								</label>
+								<label class="flex-c-c-c-n checkbox_input_container">
+									<p>V</p>
+									<input class="checkbox_input" type="checkbox">
+								</label>
+								<label class="flex-c-c-c-n checkbox_input_container">
+									<p>G</p>
+									<input class="checkbox_input" type="checkbox">
+								</label>
 							</div>
+							<div class="flex-r-n-n-xs">
+								<input class="text_input" placeholder="B" type="number" min="0" max="10" step="1">
+								<div data-statix_bind="MEDIENEINFLUESS" class="statix-select_input_container">
+									<p class="statix-select_selected"></p>
+									<ul class="statix-select_list absolute-tl"></ul>
+								</div>
+							</div>
+							<p class="error_message"></p>
 						</div>
 					</div>
 					<button class="button">Berechnen</button>
@@ -262,7 +583,7 @@
 			</form>
 			<ul id="ecokompass_list" class="ecokompass_container ecokompass_list"></ul>
 			<section>
-				<button id="ecokompass_description_button" class="button">Zurück zu beschreibung</button>
+				<button id="ecokompass_calculator_button" class="button">Zurück zu beschreibung</button>
 				<section class="ecokompass_copyright">© 2025 <a href="https://x.com/schwarzdornig">Schwarzdornig</a> und <a href="https://x.com/MaksimsTurs">дрочила хуев 🚩🌹</a>. Alle Rechte vorbehalten.</section>
 			</section>
 		</div>

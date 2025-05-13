@@ -6,6 +6,12 @@
 	flex-direction: column;
 }
 
+.flex-c-n-n-n-m {
+	gap: var(--var-gap-m);
+	display: flex;
+	flex-direction: column;
+}
+
 /*================================*/
 
 .flex-c-n-n-n {
@@ -17,4 +23,11 @@
 	gap: var(--var-gap-xs);
 	display: flex;
 	flex-direction: column;
+}
+
+.flex-c-c-c-n {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
 }

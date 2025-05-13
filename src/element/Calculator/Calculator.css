@@ -24,10 +24,11 @@
 	font-size: clamp(var(--var-font-xxl), 2.5vw, var(--var-font-xxxxl));
 	margin-bottom: var(--var-padding-l);
 	padding: var(--var-padding-l);
-	border-bottom: 1px solid var(--var-silver-transparent);
+	border-bottom: 1px solid var(--var-silver-medium-transparent);
 	font-weight: 600;
 }
 
-.ecokompass_formula_item {
+.ecokompass_bold {
+	display: contents;
 	font-weight: 700;
 }

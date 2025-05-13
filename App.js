@@ -4,62 +4,60 @@ import ImportManager from "./src/libs/ImportManager/src/ImportManager.js";
 const imports = new ImportManager();
 
 export default function App(props) {
-	const instance = new statix.Statix(props);
+	const instance = new statix.Statix();
+	const isMainTab = instance.signal(props.activeTab);
 	const statixDOM = instance.getStatixDOM();
 
-	statixDOM.setRootBySelector("#app");
+	statixDOM.setRoot("#app");
 	statixDOM
 		.root()
 		.query(".ecokompass_about_container")
 		.focus()
 		.query("#ecokompass_calculator_button")
-		.addEvent("click", openEcoKompassCalculator)
+		.addEvent("click", instance.shareSignalToEvent(isMainTab, openEcoKompassDescription))
 		.query("#ecokompass_description_button")
-		.addEvent("click", openEcoKompassDescription)
-		.reset();
+		.addEvent("click", instance.shareSignalToEvent(isMainTab, openEcoKompassCalculator));
 
-	instance.onUpdate(onUpdate);
+	isMainTab.subscribe(showActiveTab);
+	isMainTab.emit();
 
 	return instance;
 }
 
-function onUpdate(instance, isOpen) {
+function showActiveTab(instance, activeTab, _prevActiveTab) {
 	const statixDOM = instance.getStatixDOM();
-	
-	if(isOpen) {
+
+	if(activeTab === "Main") {
 		statixDOM
 			.root()
 			.query(".ecokompass_about_container")
-			.addClass("ecokompass_content_hidden")
-			.reset();
+			.focus()
+			.removeClass("ecokompass_content_hidden");
 		statixDOM
 			.root()
 			.query(".ecokompass_calculator_container")
-			.focus()
-			.removeClass("ecokompass_content_hidden")
-			.reset();
+			.addClass("ecokompass_content_hidden");
 	} else {
 		statixDOM
 			.root()
 			.query(".ecokompass_about_container")
-			.focus()
-			.removeClass("ecokompass_content_hidden")
-			.reset();
+			.addClass("ecokompass_content_hidden");
 		statixDOM
 			.root()
 			.query(".ecokompass_calculator_container")
-			.addClass("ecokompass_content_hidden")
-			.reset();
+			.focus()
+			.removeClass("ecokompass_content_hidden");
 	}
 }
 
-function openEcoKompassDescription(instance) {
-	instance.setState(false);
+function openEcoKompassDescription(signal, _instance, _event) {
+	signal.set("Main");
 }
 
-async function openEcoKompassCalculator(instance) {
+async function openEcoKompassCalculator(signal, _instance, _event) {
 	await imports.add("Calculator.component", "/src/element/Calculator/Calculator.js");
 	await imports.add("Calculator.styles", "/src/element/Calculator/Calculator.css");
 
-	instance.setState(true);
+	signal.set("Calculator");
 }
+
