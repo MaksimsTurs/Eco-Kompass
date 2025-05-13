@@ -68,5 +68,11 @@
 }
 
 .ecokompass_tutorial_container > img {
+	height: 13rem;
+	object-fit: cover;
 	width: 100%;
+}
+
+.ecokompass_tutorial_container:nth-child(2) > img:nth-child(1) {
+	object-position: bottom;
 }

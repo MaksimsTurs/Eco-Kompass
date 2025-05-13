@@ -6,7 +6,7 @@
 	flex-direction: column;
 }
 
-.flex-c-n-n-n-m {
+.flex-c-n-n-m {
 	gap: var(--var-gap-m);
 	display: flex;
 	flex-direction: column;
