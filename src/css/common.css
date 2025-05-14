@@ -1,0 +1,49 @@
+.ecokompass-description_name {
+	font-size: var(--var-font-xl);
+	font-weight: 700;
+}
+
+.ecokompass-link {
+	color: var(--var-link-color);
+	display: inline-flex;
+	font-weight: 700;
+	position: relative;
+	overflow: hidden;
+	z-index: 0;
+}
+
+.ecokompass-link::after {
+	background-color: var(--var-link-color);
+	transition:
+		transform var(--var-transition-fast) ease-in,
+		color var(--var-transition-slow) ease-in;
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	left: 0%;
+	top: 0%;
+	transform: translate(-105%);
+	z-index: -1;
+}
+
+.ecokompass-link:hover::after {
+	transition: transform var(--var-transition-fast) ease;
+	transform: translate(0%);
+}
+
+.ecokompass-link:hover {
+	transition: color var(--var-transition-slow) ease-out;
+	color: #ffffff;
+}
+
+footer {
+	padding: var(--var-padding-m);
+	margin-top: var(--var-padding-l);
+	border-top: 1px solid var(--var-black-medium-transparent);
+}
+
+.ecokompass-bold {
+	font-weight: 700;
+	display: inline-flex;
+}

@@ -1,16 +1,4 @@
-/*================================*/
-
-.flex-c-n-n-m {
-	gap: var(--var-gap-m);
-	display: flex;
-	flex-direction: column;
-}
-
-.flex-c-n-n-m {
-	gap: var(--var-gap-m);
-	display: flex;
-	flex-direction: column;
-}
+/* DISPLAY | DIRECTION | JUSTIFY CONTENT | ALIGN ITEMS */
 
 /*================================*/
 
@@ -25,9 +13,27 @@
 	flex-direction: column;
 }
 
+.flex-c-n-n-m {
+	gap: var(--var-gap-m);
+	display: flex;
+	flex-direction: column;
+}
+
+/*================================*/
+
+.flex-c-n-c-n {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+/*================================*/
+
 .flex-c-c-c-n {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
 }
+
+/*================================*/

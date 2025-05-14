@@ -1,19 +1,17 @@
-.checkbox_input_container {
+.checkbox-input_label {
 	color: var(--var-dark-silver);
 }
 
-.checkbox_input {
+.checkbox-input {
 	padding: var(--var-padding-s);
 	position: relative;
 	height: fit-content;
-	background-color: #c0c0c053;
-	border-bottom: 1px solid #000000;
-	border-top-left-radius: 3px;
-	border-top-right-radius: 3px;
+	background-color: #ffff;
+	border: 1px solid #000000;
 	overflow: hidden;
 }
 
-.checkbox_input::after {
+.checkbox-input::after {
 	content: "";
 	transition: background-color var(--var-transition-fast) ease;
 	position: absolute;
@@ -25,7 +23,7 @@
 	transform: translate(-50%, -50%);
 }
 
-.checkbox_input:checked::after {
+.checkbox-input:checked::after {
 	transition: background-color var(--var-transition-fast) ease;
 	background-color: #000000;
 }

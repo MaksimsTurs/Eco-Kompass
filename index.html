@@ -1,602 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+	<!-- METADATA -->
 	<meta charset="UTF-8">
 	<meta name="description" content="Dein Werkzeug, um die Wahrheit zu sehen.">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- LINK -->
 	<link rel="stylesheet" href="./index.css">
-	<link rel="icon" type="image/x-icon" href="./favico32x32.png">
 	<link rel="manifest" href="manifest.json" />
-	<title>Eco Kompass</title>
+	<link rel="icon" type="image/x-icon" href="./favico32x32.png">
+	<!-- OTHER -->
+	<title>Home</title>
 </head>
-<body id="app">
-	<div class="flex-r-c-n-n ecokompass_content_container ecokompass_about_container">
-		<div class="ecokompass_about_body">
-			<div class="flex-c-n-n-m">
-				<h1>Eco Kompass</h1>
-				<p class="ecokompass_quote">Alles „Fremde“ wird verteufelt, um „uns“ zu schützen.</p>
-				<p class="ecokompass_quote">Die Wahrheit wird verdreht, um Macht zu sichern.</p>
-				<section>
-					<p class="ecokompass_option_title">Willkommen beim Eco-Kompass:</p>
-					<p>
-						Dein Werkzeug, um die Wahrheit zu sehen.
-						Stell dir vor, du scrollst durch Social Media und siehst Hass, Lügen oder Politiker, die dir erzählen, wen du fürchten sollst. 
-						Klingt vertraut? Das ist kein Zufall – es könnten Warnsignale einer gefährlichen Ideologie sein. 
-						Der Eco-Kompass hilft dir, sie zu erkennen, bevor sie die Oberhand gewinnen.
-						<a target="_blank" href="https://de.wikipedia.org/wiki/Umberto_Eco">Umberto Eco</a>, ein Schriftsteller mit einem Blick für die dunklen Seiten der Geschichte, hat 14 Merkmale aufgeschrieben, die wie ein Detektor für autoritäre Ideen funktionieren.
-						Zum Beispiel: Jemand wird zum „Feind“ gemacht, um Angst zu schüren.
-					</p>
-				</section>
-				<section>
-					<p class="ecokompass_option_title">Wir haben ein 15. Merkmal hinzugefügt:</p>
-					<div>
-						Medieneinfluss – wenn Propaganda die Wahrheit erstickt. 
-						Eco hat das vor Jahrzehnten geschrieben, aber es passt perfekt zu heute, wo Lügen schneller verbreitet werden als Memes.
-						<a target="_blank" href="https://en.wikipedia.org/wiki/Robert_Paxton">Robert Paxton</a>, ein Historiker, zeigt, wie solche Ideologien wachsen – wie ein Virus. 
-						Es fängt mit kleinen Schritten an, wird dann zur Katastrophe. 
-						Der Eco-Kompass misst, wie gefährlich eine Situation ist, mit einer Skala von 
-						<p class="dark_green_color_level ecokompass_color_level">Dunkelgrün</p> (alles klar) bis 
-						<p class="dark_red_color_level ecokompass_color_level">Dunkelrot</p> (Alarm!). 
-						Jeder kann ihn nutzen – kostenlos, für alle. 
-						Du gibst ein, was du siehst, und der Kompass zeigt: Ist das nur schlechte Politik, oder steuern wir auf eine dunkle Zukunft zu?
-						Warum das wichtig ist? Wir leben in einer Zeit, in der Hass und Angst leicht Feuer fangen. 
-						Überall gibt es Stimmen, die spalten, und Medien, die verwirren.
-						Wenn wir nicht hinschauen, wird es schlimmer.
-						Eco und Paxton geben uns die Karte, um Gefahren zu erkennen.
-						Der Eco-Kompass ist dein Werkzeug, um den Kurs zu halten.
-						Was kannst du tun?
-					</div>
-				</section>
-				<section>
-					<p class="ecokompass_option_title">Teste den Kompass:</p>
-					<div>Finde heraus, was in deiner Welt los ist. <p class="ecokompass_color_level green_color_level">Grün?</p> <p class="ecokompass_color_level orange_color_level">Orange?</p> <p class="ecokompass_color_level red_color_level">Rot?</p></div>
-				</section>
-				<section>
-					<p class="ecokompass_option_title">Sprich darüber:</p>
-					<p>Teile, was du siehst, mit Freunden, in der Schule, online.</p>
-				</section>
-				<section>
-					<p class="ecokompass_option_title">Bleib kritisch:</p>
-					<p>Glaube nicht alles, was dir erzählt wird. Prüfe, wer die Fäden zieht.</p>
-				</section>
-				<section>
-					<p class="ecokompass_option_title">Mach mit:</p>
-					<p>Informiere dich, hinterfrage, handle – für eine Welt, die frei bleibt.</p>
-				</section>
-				<p>
-					Wir sind zwei Menschen, die den Eco-Kompaß gebaut haben – mit Pseudonym, aus Gründen. Wir machen das für dich, für die Zukunft, für eine Welt ohne Angst. Aber wir brauchen dich! Aufklärung funktioniert nur, wenn viele mitmachen.
-					Starte jetzt: Klick auf „Teste den Kompaß“ und finde heraus, wo wir stehen. Die Zukunft gehört uns – wenn wir sie gestalten.
-				</p>
-				<button id="ecokompass_description_button" class="button">Teste den Kompaß</button>
+<body class="flex-c-n-c-n ecokompass-main_container">
+	<h1>Eco Kompaß</h1>
+	<main class="flex-c-n-n-m ecokompass-about_body">
+		<section class="flex-c-n-n-xs">
+			<p class="ecokompass-quote">Alles „Fremde“ wird verteufelt, um „uns“ zu schützen.</p>
+			<p class="ecokompass-quote">Die Wahrheit wird verdreht, um Macht zu sichern.</p>
+		</section>
+		<section>
+			<p class="ecokompass-description_name">Willkommen beim Eco - Kompaß:</p>
+			<p>
+				Dein Werkzeug, um die Wahrheit zu sehen.
+				Stell dir vor, du scrollst durch Social Media und siehst Hass, Lügen oder Politiker, die dir erzählen, wen du fürchten sollst. 
+				Klingt vertraut? Das ist kein Zufall – es könnten Warnsignale einer gefährlichen Ideologie sein. 
+				Der Eco - Kompaß hilft dir, sie zu erkennen, bevor sie die Oberhand gewinnen.
+				<a class="ecokompass-link" target="_blank" href="https://de.wikipedia.org/wiki/Umberto_Eco">Umberto Eco</a>, ein Schriftsteller mit einem Blick für die dunklen Seiten der Geschichte, hat 14 Merkmale aufgeschrieben, die wie ein Detektor für autoritäre Ideen funktionieren.
+				Zum Beispiel: Jemand wird zum „Feind“ gemacht, um Angst zu schüren.
+			</p>
+		</section>
+		<section>
+			<p class="ecokompass-description_name">Wir haben ein 15. Merkmal hinzugefügt:</p>
+			<div>
+				Medieneinfluss – wenn Propaganda die Wahrheit erstickt. 
+				Eco hat das vor Jahrzehnten geschrieben, aber es passt perfekt zu heute, wo Lügen schneller verbreitet werden als Memes.
+				<a class="ecokompass-link" target="_blank" href="https://en.wikipedia.org/wiki/Robert_Paxton">Robert Paxton</a>, ein Historiker, zeigt, wie solche Ideologien wachsen – wie ein Virus. 
+				Es fängt mit kleinen Schritten an, wird dann zur Katastrophe. 
+				Der Eco - Kompaß misst, wie gefährlich eine Situation ist, mit einer Skala von 
+				<p class="ecokompass-color_level ecokompass-color_lvl_ok">Dunkelgrün (OK)</p> bis 
+				<p class="ecokompass-color_level ecokompass-color_lvl_dangerous">Dunkelrot (Gefährlich)</p>. 
+				Jeder kann ihn nutzen – kostenlos, für alle.
+				Du gibst ein, was du siehst, und der Kompaß zeigt: Ist das nur schlechte Politik, oder steuern wir auf eine dunkle Zukunft zu?
+				Warum das wichtig ist? Wir leben in einer Zeit, in der Hass und Angst leicht Feuer fangen. 
+				Überall gibt es Stimmen, die spalten, und Medien, die verwirren.
+				Wenn wir nicht hinschauen, wird es schlimmer.
+				Eco und Paxton geben uns die Karte, um Gefahren zu erkennen.
+				Der Eco-Kompaß ist dein Werkzeug, um den Kurs zu halten.
+				Was kannst du tun?
 			</div>
-			<section class="ecokompass_copyright">© 2025 <a target="_blank" href="https://x.com/schwarzdornig">Schwarzdornig</a> und <a target="_blank" href="https://x.com/MaksimsTurs">дрочила хуев 🚩🌹</a>. Alle Rechte vorbehalten.</section>
-		</div>
-	</div>
-	<div class="flex-r-c-n-n ecokompass_content_container ecokompass_calculator_container ecokompass_content_hidden">
-		<div class="flex-c-n-n-m ecokompass_calculator_body">
-			<section class="ecokompass_container">
-				<h5>Übersicht</h5>
-				<div class="ecokompass_container_content">
-					<div class="flex-r-n-n-xs">
-						<p class="ecokompass_bold">B:</p>
-						<p>Bedeutet wie stark etwas ausgeprägt ist zwischen 1 bis 10.</p>
-					</div>
-					<div>
-						<p class="ecokompass_bold">P:</p>
-						<p>Heißt ob etwas selten vorkommt, geduldet wird, oder systemisch ist (also zB gesetzlich).</p>
-					</div>
-				</div>
-			</section>
-			<section class="flex-c-n-n-xs ecokompass_container">
-				<h5>Bedienungsanleitung für den Eco-Kompaß</h5>
-				<div class="flex-c-n-n-m ecokompass_container_content">
-					<p>
-						Prüfe Nachrichten auf autoritäre Tendenzen. 
-						Inspiriert von Umberto Ecos 14 Merkmalen plus Medieneinfluss (15). 
-						Offline, anonym.
-					</p>
-					<div>
-						<p class="ecokompass_bold">Schritte:</p>
-						<p>
-							Wähle eine Nachricht aus seriösen Quellen: 
-							<a target="_blank" href="http://amnesty.org">Amnesty</a>,
-							<a target="_blank" href="http://un.org">UN</a> und
-							<a target="_blank" href="http://katapult-magazin.de">Katapult</a>.
-						</p>
-					</div>
-					<p>Ordne sie einem oder mehreren der 15 Merkmale thematisch zu.</p>
-					<div>
-						<p class="ecokompass_bold">Prüfe pro Merkmal:</p>
-						<div class="flex-r-n-n-xs">
-							<p>F (Freiheit)</p> bedroht? Ja oder nein?
-						</div>
-						<div class="flex-r-n-n-xs">
-							<p>V (Vernunft)</p> bedroht? Ja oder nein?
-						</div>
-						<div class="flex-r-n-n-xs">
-							<p>G (Gleichheit)</p> bedroht? Ja oder nein?
-						</div>
-					</div>
-					<div class="flex-r-n-n-xs">
-						Setze<p class="ecokompass_bold"> B </p>"Bedeutung" Skala 1 – 10, subjektives Empfinden.
-					</div>
-					<div class="flex-r-n-n-xs">
-						Setze <p class="ecokompass_bold"> P </p>"Präsenz" Einzelfall(0), geduldet(0.5), systemisch(1). 
-					</div>
-					<p>Recherchiere dazu, redet miteinander!</p>
-					<div>
-						<p class="ecokompass_bold">Berechne:</p> 
-						<div style="display: ruby;">(<p class="ecokompass_bold">F</p> × 50 + <p class="ecokompass_bold">V</p> × 30 + <p class="ecokompass_bold">G</p> × 20) × <p class="ecokompass_bold">B</p> × <p class="ecokompass_bold">P</p> pro Merkmal, addiere Scores.</div>
-					</div>
-					<div>
-						<p class="ecokompass_bold">Ergebnis:</p>
-						<p>
-							wird farblich abgestuft (dunkelgrün bis dunkelrot) dargestellt.
-						</p>
-					</div>
-					<div>
-						<p class="ecokompass_bold">Intention:</p>
-						<p>
-							U. Eco entlarvte Manipulation. 
-							Der Kompaß fördert klares Denken, basierend auf Aufklärungswerten: Freiheit, Vernunft, Gleichheit (1789). 
-							Freiheit wiegt schwer, da sie alles ermöglicht.
-						</p>
-					</div>
-					<div>
-						<p class="ecokompass_bold">Offline verwendung:</p>
-						<div>
-							Hier ist eine kleine anleitung wie man Eco - Kompaß offline verwenden kann, am ende wird bei euch auf Handy, PC oder Laptop eine Verknüpfung erstellt, diese verknüpfung kann später auch online verwendet werden.
-							Wenn ihres Browser das nicht unterstützt können Sie <a download href="./Eco-Kompaß.xlsx">Exel Tabelle</a> laden die nach gleichem prinzip funktioniert.
-						</div>
-						<div class="flex-c-n-n-m">
-							<div class="flex-c-n-n-m">
-								<p class="ecokompass_bold">Google Chrome (Laptop, PC)</p>
-								<div class="ecokompass_tutorial_container">
-									<img loading="lazy" src="./src/img/PWA_Chrome_1.png" alt="PWA Google Chrome (Laptop, PC)">
-									<img loading="lazy" src="./src/img/PWA_Chrome_2.png" alt="PWA Google Chrome (Laptop, PC)">
-									<img loading="lazy" src="./src/img/PWA_Chrome_3.png" alt="PWA Google Chrome (Laptop, PC)">
-								</div>
-							</div>
-							<div class="flex-c-n-n-m">
-								<p class="ecokompass_bold">Microsoft Edge (Laptop, PC)</p>
-								<div class="ecokompass_tutorial_container">
-									<img loading="lazy" src="./src/img/Microsoft_Edge_1.png" alt="PWA Microsoft Edge (Laptop, PC)">
-									<img loading="lazy" src="./src/img/Microsoft_Edge_2.png" alt="PWA Microsoft Edge (Laptop, PC)">
-									<img loading="lazy" src="./src/img/Microsoft_Edge_3.png" alt="PWA Microsoft Edge (Laptop, PC)">
-								</div>
-							</div>
-							<div class="flex-c-n-n-m">
-								<p class="ecokompass_bold">Google Chrome (Handy)</p>
-								<div class="ecokompass_tutorial_container">
-									<img loading="lazy" src="./src/img/PWA_Chrome_Mobile_1.jpg" alt="PWA Google Chrome (Handy)">
-									<img loading="lazy" src="./src/img/PWA_Chrome_Mobile_2.jpg" alt="PWA Google Chrome (Handy)">
-									<img loading="lazy" src="./src/img/PWA_Chrome_Mobile_3.jpg" alt="PWA Google Chrome (Handy)">
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
-			<form id="ecokompass_form" class="ecokompass_container" novalidate>
-				<h5>Überschrift und Anmerkung</h5>
-				<section class="ecokompass_container_content flex-c-n-n-xs">
-					<input name="title" class="text_input" placeholder="Überschrift" type="text" autocomplete="on">
-					<textarea name="description" class="text_area" rows="3" placeholder="Anmerkung für diese berechnung..." autocomplete="on"></textarea>
-					<div class="flex-r-sb-c-xs text_input_container">
-						<label>Traditionskult</label>
-						<div class="flex-c-n-n-xs">
-							<div class="flex-r-n-n-xs">
-								<label class="flex-c-c-c-n checkbox_input_container">
-									<p>F</p>
-									<input class="checkbox_input" type="checkbox">
-								</label>
-								<label class="flex-c-c-c-n checkbox_input_container">
-									<p>V</p>
-									<input class="checkbox_input" type="checkbox">
-								</label>
-								<label class="flex-c-c-c-n checkbox_input_container">
-									<p>G</p>
-									<input class="checkbox_input" type="checkbox">
-								</label>
-							</div>
-							<div class="flex-r-n-n-xs">
-								<input class="text_input" placeholder="B" type="number" min="0" max="10" step="1">
-								<div data-statix_bind="TRADITIONSKULT" class="statix-select_input_container">
-									<p class="statix-select_selected"></p>
-									<ul class="statix-select_list absolute-tl"></ul>
-								</div>
-							</div>
-							<p class="error_message"></p>
-						</div>
-					</div>
-					<div class="flex-r-sb-c-xs text_input_container">
-						<label>Ablehnung der Moderne</label>
-						<div class="flex-c-n-n-xs">
-							<div class="flex-r-n-n-xs">
-								<label class="flex-c-c-c-n checkbox_input_container">
-									<p>F</p>
-									<input class="checkbox_input" type="checkbox">
-								</label>
-								<label class="flex-c-c-c-n checkbox_input_container">
-									<p>V</p>
-									<input class="checkbox_input" type="checkbox">
-								</label>
-								<label class="flex-c-c-c-n checkbox_input_container">
-									<p>G</p>
-									<input class="checkbox_input" type="checkbox">
-								</label>
-							</div>
-							<div class="flex-r-n-n-xs">
-								<input class="text_input" placeholder="B" type="number" min="0" max="10" step="1">
-								<div data-statix_bind="ABLEHNUNG_DER_MODERNE" class="statix-select_input_container">
-									<p class="statix-select_selected"></p>
-									<ul class="statix-select_list absolute-tl"></ul>
-								</div>								
-							</div>
-							<p class="error_message"></p>
-						</div>
-					</div>
-					<div class="flex-r-sb-c-xs text_input_container">
-						<label>Widerspruchsverbot</label>
-						<div class="flex-c-n-n-xs">
-							<div class="flex-r-n-n-xs">
-								<label class="flex-c-c-c-n checkbox_input_container">
-									<p>F</p>
-									<input class="checkbox_input" type="checkbox">
-								</label>
-								<label class="flex-c-c-c-n checkbox_input_container">
-									<p>V</p>
-									<input class="checkbox_input" type="checkbox">
-								</label>
-								<label class="flex-c-c-c-n checkbox_input_container">
-									<p>G</p>
-									<input class="checkbox_input" type="checkbox">
-								</label>
-							</div>
-							<div class="flex-r-n-n-xs">
-								<input class="text_input" placeholder="B" type="number" min="0" max="10" step="1">
-								<div data-statix_bind="WIDERSPRUCHSVERBOT" class="statix-select_input_container">
-									<p class="statix-select_selected"></p>
-									<ul class="statix-select_list absolute-tl"></ul>
-								</div>
-							</div>
-							<p class="error_message"></p>
-						</div>
-					</div>
-					<div class="flex-r-sb-c-xs text_input_container">
-						<label>Konsenskult</label>
-						<div data-factor-key="KONSENSKULT" class="flex-c-n-n-xs">
-							<div class="flex-r-n-n-xs">
-								<label class="flex-c-c-c-n checkbox_input_container">
-									<p>F</p>
-									<input class="checkbox_input" type="checkbox">
-								</label>
-								<label class="flex-c-c-c-n checkbox_input_container">
-									<p>V</p>
-									<input class="checkbox_input" type="checkbox">
-								</label>
-								<label class="flex-c-c-c-n checkbox_input_container">
-									<p>G</p>
-									<input class="checkbox_input" type="checkbox">
-								</label>
-							</div>
-							<div class="flex-r-n-n-xs">
-								<input class="text_input" placeholder="B" type="number" min="0" max="10" step="1">
-								<div data-statix_bind="KONSENSKULT" class="statix-select_input_container">
-									<p class="statix-select_selected"></p>
-									<ul class="statix-select_list absolute-tl"></ul>
-								</div>
-							</div>
-							<p class="error_message"></p>
-						</div>
-					</div>
-					<div class="flex-r-sb-c-xs text_input_container">
-						<label>Ablehnung vom Fremden</label>
-						<div class="flex-c-n-n-xs">
-							<div class="flex-r-n-n-xs">
-								<label class="flex-c-c-c-n checkbox_input_container">
-									<p>F</p>
-									<input class="checkbox_input" type="checkbox">
-								</label>
-								<label class="flex-c-c-c-n checkbox_input_container">
-									<p>V</p>
-									<input class="checkbox_input" type="checkbox">
-								</label>
-								<label class="flex-c-c-c-n checkbox_input_container">
-									<p>G</p>
-									<input class="checkbox_input" type="checkbox">
-								</label>
-							</div>
-							<div class="flex-r-n-n-xs">
-								<input class="text_input" placeholder="B" type="number" min="0" max="10" step="1">
-								<div data-statix_bind="ABLEHNUNG_VOM_FREMDEM" class="statix-select_input_container">
-									<p class="statix-select_selected"></p>
-									<ul class="statix-select_list absolute-tl"></ul>
-								</div>
-							</div>
-							<p class="error_message"></p>
-						</div>
-					</div>
-					<div class="flex-r-sb-c-xs text_input_container">
-						<label>Elitedenken</label>
-						<div class="flex-c-n-n-xs">
-							<div class="flex-r-n-n-xs">
-								<label class="flex-c-c-c-n checkbox_input_container">
-									<p>F</p>
-									<input class="checkbox_input" type="checkbox">
-								</label>
-								<label class="flex-c-c-c-n checkbox_input_container">
-									<p>V</p>
-									<input class="checkbox_input" type="checkbox">
-								</label>
-								<label class="flex-c-c-c-n checkbox_input_container">
-									<p>G</p>
-									<input class="checkbox_input" type="checkbox">
-								</label>
-							</div>
-							<div class="flex-r-n-n-xs">
-								<input class="text_input" placeholder="B" type="number" min="0" max="10" step="1">
-								<div data-statix_bind="ELITENDENKEN" class="statix-select_input_container">
-									<p class="statix-select_selected"></p>
-									<ul class="statix-select_list absolute-tl"></ul>
-								</div>
-							</div>
-							<p class="error_message"></p>
-						</div>
-					</div>
-					<div class="flex-r-sb-c-xs text_input_container">
-						<label>Heldentum verherrlichen</label>
-						<div class="flex-c-n-n-xs">
-							<div class="flex-r-n-n-xs">
-								<label class="flex-c-c-c-n checkbox_input_container">
-									<p>F</p>
-									<input class="checkbox_input" type="checkbox">
-								</label>
-								<label class="flex-c-c-c-n checkbox_input_container">
-									<p>V</p>
-									<input class="checkbox_input" type="checkbox">
-								</label>
-								<label class="flex-c-c-c-n checkbox_input_container">
-									<p>G</p>
-									<input class="checkbox_input" type="checkbox">
-								</label>
-							</div>
-							<div class="flex-r-n-n-xs">
-								<input class="text_input" placeholder="B" type="number" min="0" max="10" step="1">
-								<div data-statix_bind="HELDENTUM_VERHERRLICHEN" class="statix-select_input_container">
-									<p class="statix-select_selected"></p>
-									<ul class="statix-select_list absolute-tl"></ul>
-								</div>
-							</div>
-							<p class="error_message"></p>
-						</div>
-					</div>
-					<div class="flex-r-sb-c-xs text_input_container">
-						<label>Machismus</label>
-						<div class="flex-c-n-n-xs">
-							<div class="flex-r-n-n-xs">
-								<label class="flex-c-c-c-n checkbox_input_container">
-									<p>F</p>
-									<input class="checkbox_input" type="checkbox">
-								</label>
-								<label class="flex-c-c-c-n checkbox_input_container">
-									<p>V</p>
-									<input class="checkbox_input" type="checkbox">
-								</label>
-								<label class="flex-c-c-c-n checkbox_input_container">
-									<p>G</p>
-									<input class="checkbox_input" type="checkbox">
-								</label>
-							</div>
-							<div class="flex-r-n-n-xs">
-								<input class="text_input" placeholder="B" type="number" min="0" max="10" step="1">
-								<div data-statix_bind="MACHISMUS" class="statix-select_input_container">
-									<p class="statix-select_selected"></p>
-									<ul class="statix-select_list absolute-tl"></ul>
-								</div>
-							</div>
-							<p class="error_message"></p>
-						</div>
-					</div>
-					<div class="flex-r-sb-c-xs text_input_container">
-						<label>Selektiver Populismus</label>
-						<div class="flex-c-n-n-xs">
-							<div class="flex-r-n-n-xs">
-								<label class="flex-c-c-c-n checkbox_input_container">
-									<p>F</p>
-									<input class="checkbox_input" type="checkbox">
-								</label>
-								<label class="flex-c-c-c-n checkbox_input_container">
-									<p>V</p>
-									<input class="checkbox_input" type="checkbox">
-								</label>
-								<label class="flex-c-c-c-n checkbox_input_container">
-									<p>G</p>
-									<input class="checkbox_input" type="checkbox">
-								</label>
-							</div>
-							<div class="flex-r-n-n-xs">
-								<input class="text_input" placeholder="B" type="number" min="0" max="10" step="1">
-								<div data-statix_bind="SELEKTIVER_POPULISMUS" class="statix-select_input_container">
-									<p class="statix-select_selected"></p>
-									<ul class="statix-select_list absolute-tl"></ul>
-								</div>
-							</div>
-							<p class="error_message"></p>
-						</div>
-					</div>
-					<div class="flex-r-sb-c-xs text_input_container">
-						<label>Neusprech, Vereinfachung</label>
-						<div class="flex-c-n-n-xs">
-							<div class="flex-r-n-n-xs">
-								<label class="flex-c-c-c-n checkbox_input_container">
-									<p>F</p>
-									<input class="checkbox_input" type="checkbox">
-								</label>
-								<label class="flex-c-c-c-n checkbox_input_container">
-									<p>V</p>
-									<input class="checkbox_input" type="checkbox">
-								</label>
-								<label class="flex-c-c-c-n checkbox_input_container">
-									<p>G</p>
-									<input class="checkbox_input" type="checkbox">
-								</label>
-							</div>
-							<div class="flex-r-n-n-xs">
-								<input class="text_input" placeholder="B" type="number" min="0" max="10" step="1">
-								<div data-statix_bind="NEUSPRECH_VEREINFACHUNG" class="statix-select_input_container">
-									<p class="statix-select_selected"></p>
-									<ul class="statix-select_list absolute-tl"></ul>
-								</div>
-							</div>
-							<p class="error_message"></p>
-						</div>
-					</div>
-					<div class="flex-r-sb-c-xs text_input_container">
-						<label>Nationalismus</label>
-						<div class="flex-c-n-n-xs">
-							<div class="flex-r-n-n-xs">
-								<label class="flex-c-c-c-n checkbox_input_container">
-									<p>F</p>
-									<input class="checkbox_input" type="checkbox">
-								</label>
-								<label class="flex-c-c-c-n checkbox_input_container">
-									<p>V</p>
-									<input class="checkbox_input" type="checkbox">
-								</label>
-								<label class="flex-c-c-c-n checkbox_input_container">
-									<p>G</p>
-									<input class="checkbox_input" type="checkbox">
-								</label>
-							</div>
-							<div class="flex-r-n-n-xs">
-								<input class="text_input" placeholder="B" type="number" min="0" max="10" step="1">
-								<div data-statix_bind="NATIONALISMUS" class="statix-select_input_container">
-									<p class="statix-select_selected"></p>
-									<ul class="statix-select_list absolute-tl"></ul>
-								</div>
-							</div>
-							<p class="error_message"></p>
-						</div>
-					</div>
-					<div class="flex-r-sb-c-xs text_input_container">
-						<label>Feindbild</label>
-						<div class="flex-c-n-n-xs">
-							<div class="flex-r-n-n-xs">
-								<label class="flex-c-c-c-n checkbox_input_container">
-									<p>F</p>
-									<input class="checkbox_input" type="checkbox">
-								</label>
-								<label class="flex-c-c-c-n checkbox_input_container">
-									<p>V</p>
-									<input class="checkbox_input" type="checkbox">
-								</label>
-								<label class="flex-c-c-c-n checkbox_input_container">
-									<p>G</p>
-									<input class="checkbox_input" type="checkbox">
-								</label>
-							</div>
-							<div class="flex-r-n-n-xs">
-								<input class="text_input" placeholder="B" type="number" min="0" max="10" step="1">
-								<div data-statix_bind="FEINDBILD" class="statix-select_input_container">
-									<p class="statix-select_selected"></p>
-									<ul class="statix-select_list absolute-tl"></ul>
-								</div>								
-							</div>
-							<p class="error_message"></p>
-						</div>
-					</div>
-					<div class="flex-r-sb-c-xs text_input_container">
-						<label>Massenkontrolle</label>
-						<div class="flex-c-n-n-xs">
-							<div class="flex-r-n-n-xs">
-								<label class="flex-c-c-c-n checkbox_input_container">
-									<p>F</p>
-									<input class="checkbox_input" type="checkbox">
-								</label>
-								<label class="flex-c-c-c-n checkbox_input_container">
-									<p>V</p>
-									<input class="checkbox_input" type="checkbox">
-								</label>
-								<label class="flex-c-c-c-n checkbox_input_container">
-									<p>G</p>
-									<input class="checkbox_input" type="checkbox">
-								</label>
-							</div>
-							<div class="flex-r-n-n-xs">
-								<input class="text_input" placeholder="B" type="number" min="0" max="10" step="1">
-								<div data-statix_bind="MASSENKONTROLLE" class="statix-select_input_container">
-									<p class="statix-select_selected"></p>
-									<ul class="statix-select_list absolute-tl"></ul>
-								</div>
-							</div>
-							<p class="error_message"></p>
-						</div>
-					</div>
-					<div class="flex-r-sb-c-xs text_input_container">
-						<label>Angst als Macht</label>
-						<div class="flex-c-n-n-xs">
-							<div class="flex-r-n-n-xs">
-								<label class="flex-c-c-c-n checkbox_input_container">
-									<p>F</p>
-									<input class="checkbox_input" type="checkbox">
-								</label>
-								<label class="flex-c-c-c-n checkbox_input_container">
-									<p>V</p>
-									<input class="checkbox_input" type="checkbox">
-								</label>
-								<label class="flex-c-c-c-n checkbox_input_container">
-									<p>G</p>
-									<input class="checkbox_input" type="checkbox">
-								</label>
-							</div>
-							<div class="flex-r-n-n-xs">
-								<input class="text_input" placeholder="B" type="number" min="0" max="10" step="1">
-								<div data-statix_bind="ANGST_ALS_MACHT" class="statix-select_input_container">
-									<p class="statix-select_selected"></p>
-									<ul class="statix-select_list absolute-tl"></ul>
-								</div>
-							</div>
-							<p class="error_message"></p>
-						</div>
-					</div>
-					<div class="flex-r-sb-c-xs text_input_container">
-						<label>Medieneinfluss</label>
-						<div class="flex-c-n-n-xs">
-							<div class="flex-r-n-n-xs">
-								<label class="flex-c-c-c-n checkbox_input_container">
-									<p>F</p>
-									<input class="checkbox_input" type="checkbox">
-								</label>
-								<label class="flex-c-c-c-n checkbox_input_container">
-									<p>V</p>
-									<input class="checkbox_input" type="checkbox">
-								</label>
-								<label class="flex-c-c-c-n checkbox_input_container">
-									<p>G</p>
-									<input class="checkbox_input" type="checkbox">
-								</label>
-							</div>
-							<div class="flex-r-n-n-xs">
-								<input class="text_input" placeholder="B" type="number" min="0" max="10" step="1">
-								<div data-statix_bind="MEDIENEINFLUESS" class="statix-select_input_container">
-									<p class="statix-select_selected"></p>
-									<ul class="statix-select_list absolute-tl"></ul>
-								</div>
-							</div>
-							<p class="error_message"></p>
-						</div>
-					</div>
-					<button class="button">Berechnen</button>
-				</section>
-			</form>
-			<ul id="ecokompass_list" class="ecokompass_container ecokompass_list"></ul>
-			<section>
-				<button id="ecokompass_calculator_button" class="button">Zurück zu beschreibung</button>
-				<section class="ecokompass_copyright">© 2025 <a href="https://x.com/schwarzdornig">Schwarzdornig</a> und <a href="https://x.com/MaksimsTurs">дрочила хуев 🚩🌹</a>. Alle Rechte vorbehalten.</section>
-			</section>
-		</div>
-	</div>
+		</section>
+		<section>
+			<p class="ecokompass-description_name">Teste den Kompass:</p>
+			<div>
+				Finde heraus, was in deiner Welt los ist. 
+				<p class="ecokompass-color_level ecokompass-ok_color_lvl_spectrum">Grün?</p> <p class="ecokompass-color_level ecokompass-middle_lvl">Orange?</p> <p class="ecokompass-color_level ecokompass-dangerous_color_lvl_spectrum">Rot?</p>
+			</div>
+		</section>
+		<section>
+			<p class="ecokompass-description_name">Sprich darüber:</p>
+			Teile, was du siehst, mit Freunden, in der Schule, online.
+		</section>
+		<section>
+			<p class="ecokompass-description_name">Bleib kritisch:</p>
+			Glaube nicht alles, was dir erzählt wird. Prüfe, wer die Fäden zieht.
+		</section>
+		<section>
+			<p class="ecokompass-description_name">Mach mit:</p>
+			Informiere dich, hinterfrage, handle – für eine Welt, die frei bleibt.
+		</section>
+		<p>
+			Wir sind zwei Menschen, die den Eco-Kompaß gebaut haben – mit Pseudonym, aus Gründen. Wir machen das für dich, für die Zukunft, für eine Welt ohne Angst. Aber wir brauchen dich! Aufklärung funktioniert nur, wenn viele mitmachen.
+			Starte jetzt: Klick auf „Teste den Kompaß“ und finde heraus, wo wir stehen. Die Zukunft gehört uns – wenn wir sie gestalten.
+		</p>
+		<a href="/kompass.html" class="button">Teste den Kompaß</a>
+	</main>
+	<footer class="ecokompass-home_footer">© 2025 <a class="ecokompass-link" target="_blank" href="https://x.com/schwarzdornig">Schwarzdornig</a> und <a class="ecokompass-link" target="_blank" href="https://x.com/sukanahuipidor">Bad and Red 🚩🌹</a>. Alle Rechte vorbehalten.</>
 </body>	
 <script type="module" src="./index.js"></script>	
 </html>

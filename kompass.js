@@ -1,30 +1,27 @@
-import List from "../List/List.js";
-import Select from "../Select/Select.js";
+import List from "./src/element/List/List.js";
+import Select from "./src/element/Select/Select.js";
 
-import statix from "../../libs/statix/src/statix.core.js";
+import statix from "./src/libs/statix/src/statix.core.js";
 
-import isInRange from "../../utils/isInRange.utils.js";
+import isInRange from "./src/utils/isInRange.utils.js";
 
 import { 
 	G_FACTOR 
-} from "../../../NUMBER.const.js";
+} from "./NUMBER.const.js";
 import { 
 	G_WARNING_LVL 
-} from "../../../STRING.const.js";
+} from "./STRING.const.js";
 
 // DOM Elements
-const ecoKompassForm = document.getElementById("ecokompass_form");
-const ecoKompassFormInputs = ecoKompassForm.querySelectorAll("input, textarea");
-
-const ecoTitleInput = ecoKompassForm.querySelector('[name="title"]');
-const ecoDescriptionInput = ecoKompassForm.querySelector('[name="description"]');
+const kompassForm = document.getElementById("ecokompass_form");
+const kompassFormInputs = kompassForm.querySelectorAll("input, textarea");
 
 const list = List({ selector: "#ecokompass_list", data: JSON.parse(localStorage.getItem("ecokompass") || "[]") });
 
 const selectStatixInstances = [];
 
-ecoKompassForm
-	.querySelectorAll(".statix-select_input_container")
+kompassForm
+	.querySelectorAll(".select-input_container")
 	.forEach(function(select) {
 		selectStatixInstances.push(Select({ 
 			options: [{ text: "Einzelfall", value: 0 }, { text: "Geduldet", value: 0.5 }, { text: "Systemisch", value: 1 }],
@@ -33,15 +30,18 @@ ecoKompassForm
 		}));
 	});
 
-ecoKompassForm.addEventListener("submit", createNewListItem);
+kompassForm.addEventListener("submit", createNewListItem);
 
 function createNewListItem(event) {
 	event.preventDefault();
 
+	const kompassTitleInput = kompassForm.querySelector('[name="title"]');
+	const kompassDescriptionInput = kompassForm.querySelector('[name="description"]');
+
 	const newListItem = {
 		id: statix.Utils.generateRandomValue(),
-		title: ecoTitleInput.value || `#${list.itemsSignal.val().length + 1}`,
-		description: ecoDescriptionInput.value,
+		title: kompassTitleInput.value || `#${list.itemsSignal.val().length + 1}`,
+		description: kompassDescriptionInput.value,
 		colorLevel:  "",
 		sum: 0
 	};
@@ -49,11 +49,11 @@ function createNewListItem(event) {
 	let index = 2;
 	let statixInstanceIndex = 0;
 
-	const length = ecoKompassFormInputs.length;
+	const length = kompassFormInputs.length;
 
 	while(index < length) {
 		const PInput = selectStatixInstances[statixInstanceIndex++];
-		const BInput = ecoKompassFormInputs.item(index + 3);
+		const BInput = kompassFormInputs.item(index + 3);
 
 		const P = +PInput.val().value;
 		const B = Number(BInput.value) || 0;
@@ -70,9 +70,9 @@ function createNewListItem(event) {
 			errorMessageP.classList.remove("error_message_visible");
 		}
 
-		const FInput = ecoKompassFormInputs.item(index);
-		const VInput = ecoKompassFormInputs.item(index + 1);
-		const GInput = ecoKompassFormInputs.item(index + 2);
+		const FInput = kompassFormInputs.item(index);
+		const VInput = kompassFormInputs.item(index + 1);
+		const GInput = kompassFormInputs.item(index + 2);
 	
 		const F = +FInput.checked;
 		const V = +VInput.checked;
@@ -89,8 +89,8 @@ function createNewListItem(event) {
 		index += 4;
 	}
 
-	ecoTitleInput.value = "";
-	ecoDescriptionInput.value = "";
+	kompassTitleInput.value = "";
+	kompassDescriptionInput.value = "";
 
 	if(newListItem.sum >= 7501) {
 		newListItem.colorLevel = G_WARNING_LVL.DANGEROUS;

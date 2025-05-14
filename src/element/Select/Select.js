@@ -34,7 +34,7 @@ function renderSelectedOption(instance, curr, _prev) {
 	instance
 		.getStatixDOM()
 		.root()
-		.query(".statix-select_selected")
+		.query(".select-selected")
 		.text(curr.text);
 }
 
@@ -42,8 +42,8 @@ function renderIsSelectOpen(instance, _curr, _prev) {
 	instance
 		.getStatixDOM()
 		.root()
-		.query(".statix-select_list")
-		.toggleClass("statix-select_list_open");
+		.query(".select-list")
+		.toggleClass("select-list_open");
 }
 
 function handleSelectOptionClick(signals, _nstance, event) {
@@ -58,7 +58,7 @@ function handleSelectOptionClick(signals, _nstance, event) {
 }
 
 function renderSelectOptions(instance, curr, _prev) {
-	const STATIX_SELECT_LIST_SELECTOR = ".statix-select_list";
+	const STATIX_SELECT_LIST_SELECTOR = ".select-list";
 
 	let index = 0;
 	let length = curr.length;

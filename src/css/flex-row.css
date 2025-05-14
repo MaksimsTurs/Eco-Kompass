@@ -1,3 +1,6 @@
+
+/* DISPLAY | DIRECTION | JUSTIFY CONTENT | ALIGN ITEMS */
+
 /*================================*/
 
 .flex-r-c-n-n {
@@ -12,6 +15,14 @@
 	display: flex;
 }
 
+/*================================*/
+
+.flex-r-c-c-n {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
 .flex-r-c-c-xs {
 	gap: var(--var-gap-xs);
 	display: flex;
@@ -19,11 +30,15 @@
 	justify-content: center;
 }
 
+/*================================*/
+
 .flex-r-n-c-xs {
 	gap: var(--var-gap-xs);
 	display: flex;
 	align-items: center;
 }
+
+/*================================*/
 
 .flex-r-sb-c-xs {
 	gap: var(--var-gap-xs);
@@ -31,3 +46,5 @@
 	justify-content: space-between;
 	align-items: center;
 }
+
+/*================================*/

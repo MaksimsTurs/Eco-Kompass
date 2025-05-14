@@ -1,78 +1,81 @@
+/* Others */
+@import url(./src/css/reset.css);
+@import url(./src/css/variable.css);
+@import url(./src/css/font.css);
+@import url(./src/css/common.css);
 /* Layout */
 @import url(./src/css/flex-column.css);
 @import url(./src/css/flex-row.css);
-@import url(./src/css/about.css);
 @import url(./src/css/position.css);
-@import url(./src/css/reset.css);
-@import url(./src/css/variable.css);
 /* Elements */
-@import url(./src/element/Error/Error.css);
 @import url(./src/element/Button/Button.css);
 
-@font-face {
-	font-family: "Poppins Regular";
-	src: url(./src/font/Poppins-Regular.woff2);
+.ecokompass-main_container {
+	flex-grow: 1;
+	background: url(./src/imgs/Umberto_Eco.webp) 50% 50% no-repeat fixed;
+	background-size: var(--var-eco-portrait-width) var(--var-eco-portrait-height);
+	z-index: 0;
 }
 
-@font-face {
-	font-family: "Poppins Semi Bold";
-	src: url(./src/font/Poppins-SemiBold.woff2);
+.ecokompass-main_container > h1 {
+	padding: var(--var-padding-l);
+	margin-bottom: var(--var-margin-l);
+	border-bottom: 1px solid var(--var-silver-low-transparent);
 }
 
-@font-face {
-	font-family: "Poppins Thin";
-	src: url(./src/font/Poppins-Thin.woff2);
-}
-
-@font-face {
-	font-family: "Poppins Medium";
-	src: url(./src/font/Poppins-Medium.woff2);
-}
-
-@font-face {
-	font-family: "Poppins Light";
-	src: url(./src/font/Poppins-Light.woff2);
-}
-
-.ecokompass_content_container {
-	transition: left var(--var-transition-very-slow) ease-in;
-	position: absolute;
-	overflow-y: scroll;
-	width: 100%;
+.ecokompass-main_container::after {
+	background-color: var(--var-white-hight-transparent);
+	content: "";
+	position: fixed;
 	left: 0%;
 	top: 0%;
-}
-
-.ecokompass_content_container::-webkit-scrollbar {
-	display: none;
-}
-
-.ecokompass_container_content {
-	padding: 0 var(--var-padding-l) var(--var-padding-l) var(--var-padding-l);
-}
-
-.ecokompass_copyright {
-	padding-top: var(--var-padding-m);
-	margin-top: var(--var-padding-l);
-	border-top: 1px solid var(--var-black-medium-transparent);
-}
-
-.ecokompass_content_hidden {
-	transition: left var(--var-transition-very-slow) ease;
-	left: -110%;
-}
-
-.ecokompass_tutorial_container {
-	display: grid;
-	grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
-}
-
-.ecokompass_tutorial_container > img {
-	height: 13rem;
-	object-fit: cover;
 	width: 100%;
+	height: 100%;
+	backdrop-filter: blur(10px);
+	z-index: -1;
 }
 
-.ecokompass_tutorial_container:nth-child(2) > img:nth-child(1) {
-	object-position: bottom;
+.ecokompass-about_body {
+	padding: 0 var(--var-padding-l);
+	width: calc(var(--var-padding-l) + var(--var-eco-portrait-width));
+}
+
+.ecokompass-quote {
+	padding: var(--var-padding-l);
+	background-color: var(--var-white-hight-transparent);
+	border: 1px solid var(--var-black-medium-transparent);
+	box-shadow: 3px 3px 0 0 var(--var-black-medium-transparent);
+	text-align: center;
+	font-weight: 700;
+}
+
+.ecokompass-color_level {
+	padding: 0 var(--var-padding-xs);
+  display: inline-flex;
+	color: #ffffff;
+	width: fit-content;
+}
+
+.ecokompass-color_lvl_ok {
+	background-color: #004b00;
+}
+
+.ecokompass-color_lvl_dangerous {
+	background-color: #590302;
+}
+
+.ecokompass-ok_color_lvl_spectrum {
+	background-image: linear-gradient(90deg, #004b00 50%, #03a603 50%);
+}
+
+.ecokompass-middle_lvl {
+	background-color: #a65f03;
+}
+
+.ecokompass-dangerous_color_lvl_spectrum {
+	background-image: linear-gradient(90deg, #590302 50%, #a60603 50%);
+}
+
+.ecokompass-home_footer {
+	width: calc(var(--var-padding-m) + var(--var-eco-portrait-width));
 }

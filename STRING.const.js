@@ -4,4 +4,4 @@ export const G_WARNING_LVL = {
 	MIDDLE:             "#a65f03",
 	DANGEROUS_MODERATE: "#a60603",
 	DANGEROUS:          "#590302"
-}
+};
