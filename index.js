@@ -1,4 +1,3 @@
-// TODO: Make it work!
-// navigator
-// 	.serviceWorker
-// 	.register("./src/sw.js");
+if(navigator.serviceWorker) {
+	navigator.serviceWorker.register("./src/sw.js");
+}
