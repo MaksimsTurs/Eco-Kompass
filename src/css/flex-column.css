@@ -36,4 +36,11 @@
 	justify-content: center;
 }
 
+.flex-rc-c-c-c-n {
+	display: flex;
+	flex-direction: column-reverse;
+	align-items: center;
+	justify-content: center;
+}
+
 /*================================*/

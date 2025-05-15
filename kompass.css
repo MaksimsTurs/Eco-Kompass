@@ -25,6 +25,12 @@ main {
 	width: 40rem;
 }
 
+@media(width <= 635px) {
+	.ecokompass-container {
+		width: 100%;
+	}
+}
+
 .ecokompass-section_container {
 	background-color: #ffff;
 	border: 1px solid #000000;
@@ -44,7 +50,8 @@ main {
 
 .ecokompass-pwa_tutorial_img {
 	display: block;
-	width: 15rem;
+	width: fit-content;
+	max-width: 100%;
 }
 
 @media(width <= 400px) {
@@ -57,10 +64,6 @@ main {
 	.ecokompass-point_inputs {
 		width: 100%;
 	}
-}
-
-.ecokompass-point_container:hover > .ecokompass-point_label {
-	font-weight: 700;
 }
 
 .ecokompass-point_label {

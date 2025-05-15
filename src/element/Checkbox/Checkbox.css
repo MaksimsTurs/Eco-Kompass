@@ -1,29 +1,33 @@
 .checkbox-input_label {
-	color: var(--var-dark-silver);
+	cursor: pointer;
 }
 
-.checkbox-input {
+.checkbox-input_label > span {
+	color: var(--var-dark-silver);
 	padding: var(--var-padding-s);
 	position: relative;
-	height: fit-content;
 	background-color: #ffff;
 	border: 1px solid #000000;
 	overflow: hidden;
+	width: 20px;
+	height: 20px;
 }
 
-.checkbox-input::after {
+.checkbox-input_label > span::after {
 	content: "";
-	transition: background-color var(--var-transition-fast) ease;
+	transition: transform var(--var-transition-fast) ease;
+	background-color: #000000;
+	color: white;
 	position: absolute;
-	left: 50%;
-	top: 50%;
+  left: 0%;
+  top: 0%;
 	width: 100%;
 	height: 100%;
-	color: white;
-	transform: translate(-50%, -50%);
+	transform: scale(0);
+	z-index: 1;
 }
 
-.checkbox-input:checked::after {
-	transition: background-color var(--var-transition-fast) ease;
-	background-color: #000000;
+.checkbox-input:checked ~ span::after {
+	transition: transform var(--var-transition-fast) ease;
+	transform: scale(1);
 }

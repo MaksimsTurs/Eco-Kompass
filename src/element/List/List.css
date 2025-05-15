@@ -46,6 +46,7 @@
 .ecokompass_list_item_data_container_open {
 	transition: height var(--var-transition-fast) ease;
 	height: auto;
+	max-height: 100%;
 }
 
 .ecokompass_list_item_delete_button {
