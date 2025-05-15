@@ -1,18 +1,18 @@
-.ecokompass_list_item {
+.ecokompass-list_item {
 	transition: height var(--var-transition-fast) ease;
 	transform: translateZ(0);
 	overflow: hidden;
 	height: 56px;
 }
 
-.ecokompass_list_item_title {
+.ecokompass-list_item_title {
 	padding: var(--var-padding-l) var(--var-padding-xl);
 	position: relative;
 	cursor: pointer;
 	font-weight: 700;
 }
 
-.ecokompass_list_item_title::before {
+.ecokompass-list_item_title::before {
 	transition: opacity var(--var-transition-fast) ease;
 	background-color: var(--var-silver-medium-transparent);
 	content: "";
@@ -24,37 +24,37 @@
 	opacity: 0;
 }
 
-.ecokompass_list_item_title:hover::before {
+.ecokompass-list_item_title:hover::before {
 	opacity: 1;
 	transition: opacity var(--var-transition-fast) ease;
 }
 
-.ecokompass_list_item_property > p:first-child {
+.ecokompass-list_item_property > p:first-child {
 	color: var(--var-dark-silver);
 }
 
-.ecokompass_list_item_color > p:last-child {
+.ecokompass-list_item_color > p:last-child {
 	width: var(--var-size-s);
 	height: var(--var-size-s);
 	border-radius: 50%;
 }
 
-.ecokompass_list_item_data_container {
+.ecokompass-list_item_data_container {
 	padding: var(--var-padding-l);
 }
 
-.ecokompass_list_item_data_container_open {
+.ecokompass-list_item_data_container_open {
 	transition: height var(--var-transition-fast) ease;
 	height: auto;
 	max-height: 100%;
 }
 
-.ecokompass_list_item_delete_button {
+.ecokompass-list_item_delete_button {
 	background-color: var(--var-dark-red) !important;
 	box-shadow: 3px 3px 0 0 var(--var-dark-red) !important;
 }
 
-.ecokompass_list_item_delete_button::after {
+.ecokompass-list_item_delete_button::after {
 	transition: opacity var(--var-transition-fast) ease;
 	border: 1px solid var(--var-dark-red) !important;
 	content: "";
@@ -68,6 +68,6 @@
 	background-color: #ffffff;
 }
 
-.ecokompass_list_item_delete_button:hover {
+.ecokompass-list_item_delete_button:hover {
 	color: var(--var-dark-red) !important;
 }

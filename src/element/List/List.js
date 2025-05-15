@@ -81,15 +81,15 @@ function filterList(prev, id) {
 function listItemActionsHandler(signal, _instance, event) {
 	event.stopPropagation();
 
-	if(event.target.classList.contains("ecokompass_list_item_delete_button")) {
+	if(event.target.classList.contains("ecokompass-list_item_delete_button")) {
 		// Remove list item when delete button was clicked.
 		signal.set(prev => filterList(prev, event.target.dataset[statix.CONST.DATASET_LIST_ID]));	
-	} else if(event.target.classList.contains("ecokompass_list_item_title")) {
+	} else if(event.target.classList.contains("ecokompass-list_item_title")) {
 		// Expand list item when title was clicked.
 		event.target?.parentNode
-			?.querySelector(".ecokompass_list_item_data_container")
+			?.querySelector(".ecokompass-list_item_data_container")
 			?.parentNode
 			?.classList
-			?.toggle("ecokompass_list_item_data_container_open");
+			?.toggle("ecokompass-list_item_data_container_open");
 	}
 }
