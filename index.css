@@ -4,6 +4,7 @@
 @import url(./src/css/font.css);
 @import url(./src/css/common.css);
 /* Layout */
+@import url(./src/css/media-query.css);
 @import url(./src/css/flex-column.css);
 @import url(./src/css/flex-row.css);
 @import url(./src/css/position.css);
@@ -13,7 +14,7 @@
 .ecokompass-main_container {
 	flex-grow: 1;
 	background: url(./src/imgs/Umberto_Eco.webp) 50% 50% no-repeat fixed;
-	background-size: var(--var-eco-portrait-width) var(--var-eco-portrait-height);
+	background-size: var(--var-main-container-size) var(--var-eco-portrait-height);
 	z-index: 0;
 }
 
@@ -37,7 +38,7 @@
 
 .ecokompass-about_body {
 	padding: 0 var(--var-padding-l);
-	width: calc(var(--var-padding-l) + var(--var-eco-portrait-width));
+	width: var(--var-main-container-size);
 }
 
 .ecokompass-quote {
@@ -74,8 +75,4 @@
 
 .ecokompass-dangerous_color_lvl_spectrum {
 	background-image: linear-gradient(90deg, #590302 50%, #a60603 50%);
-}
-
-.ecokompass-home_footer {
-	width: calc(var(--var-padding-m) + var(--var-eco-portrait-width));
 }

@@ -5,6 +5,7 @@
 @import url(./src/css/common.css);
 /* Layout */
 @import url(./src/css/flex-column.css);
+@import url(./src/css/media-query.css);
 @import url(./src/css/flex-row.css);
 @import url(./src/css/position.css);
 /* Elements */
@@ -22,13 +23,7 @@ main {
 }
 
 .ecokompass-container {
-	width: 40rem;
-}
-
-@media(width <= 635px) {
-	.ecokompass-container {
-		width: 100%;
-	}
+	width: var(--var-main-container-size);
 }
 
 .ecokompass-section_container {
@@ -52,18 +47,6 @@ main {
 	display: block;
 	width: fit-content;
 	max-width: 100%;
-}
-
-@media(width <= 400px) {
-	.ecokompass-point_container {
-		align-items: flex-start;
-		flex-direction: column;
-		gap: 0;
-	}
-	
-	.ecokompass-point_inputs {
-		width: 100%;
-	}
 }
 
 .ecokompass-point_label {

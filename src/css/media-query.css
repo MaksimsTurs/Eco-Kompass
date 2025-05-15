@@ -1,0 +1,21 @@
+@media(width <= 640px) {
+	.ecokompass-container,
+	.ecokompass-point_inputs,
+	.ecokompass-about_body,
+	.text_input,
+	.text-area,
+	.text_input_container > div {
+		width: 100% !important;
+	}
+	
+	.ecokompass-point_container {
+		align-items: flex-start !important;
+		flex-direction: column !important;
+		gap: 0 !important;
+	}
+	
+	.text_input_container {
+		flex-direction: column !important;
+		align-items: flex-start !important;
+	}
+}
