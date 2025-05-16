@@ -1,3 +1,3 @@
 if(navigator.serviceWorker) {
-	navigator.serviceWorker.register("./src/sw.js");
+	navigator.serviceWorker.register("sw.js", { scope: "/" });
 }

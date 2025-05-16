@@ -12,6 +12,10 @@ import {
 	G_WARNING_LVL 
 } from "./STRING.const.js";
 
+if(navigator.serviceWorker) {
+	navigator.serviceWorker.register("sw.js", { scope: "/" });
+}
+
 // DOM Elements
 const kompassForm = document.getElementById("ecokompass_form");
 const kompassFormInputs = kompassForm.querySelectorAll("input, textarea");

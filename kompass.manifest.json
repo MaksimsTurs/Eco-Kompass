@@ -1,12 +1,8 @@
 {
-	"name": "Eco - Kompaß",
+	"name": "Kompaß",
 	"short_name": "ECO",
-	"start_url": "index.html",
-	"display": "standalone",
-	"background_color": "#ffffff",
-	"theme_color": "#ffffff",
-	"orentation": "portrait-primary",
-	"scope": "/",
+	"start_url": "kompass.html",
+	"display": "fullscreen",
 	"icons": [
 		{
 			"src": "favico512x512.png",

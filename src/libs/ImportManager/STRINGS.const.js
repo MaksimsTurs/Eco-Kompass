@@ -1,4 +1,0 @@
-export const G_IMPORT_MANAGER_LAZY_MODULES_EXTENTIONS = {
-	JS:  "JS",
-	CSS: "CSS"
-}
