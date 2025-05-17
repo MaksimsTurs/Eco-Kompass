@@ -127,16 +127,16 @@ class StatixDOM {
 			const currArrayItem = currArray[index];
 			const prevArrayItem = prevArray[index];
 			const child = element.childNodes[index];
-			const key = getKey(currArrayItem);
+			const key = getKey(currArrayItem || index);
 
 			delete listMapCopy[key];
 
 			if((currArrayItem && prevArrayItem && childMustBeChangedCallback) && 
 			   (child?.dataset[G_STATIX_DATASET_LIST_ID] === key) && 
 				 childMustBeChangedCallback(currArrayItem, prevArrayItem)) {
-				changeChildCallback(statix, currArrayItem, child);
-			} else if(key && !child) {
-				const newChild = createChildCallback(statix, currArrayItem);
+				changeChildCallback(statix, currArrayItem, child, index);
+			} else if(key !== undefined && key !== null && !child) {
+				const newChild = createChildCallback(statix, currArrayItem, index);
 
 				if(newChild instanceof StatixDOMManipulation) {
 					this.#mMetadata.mListItemMap[key] = newChild.__mElement__;

@@ -2,12 +2,19 @@ import statix from "../../libs/statix/src/statix.core.js";
 
 import Empty from "../Empty/Empty.js";
 import ListItem from "./ListItem.js";
+// import Pagination from "../Pagination/Pagination.js";
 
 export default function List(props) {
+	// const pagination = Pagination({ bindSelector: "ecokompass_list_pagination", pagesCount: ~~(props.data.length / 2) });
 	const instance = new statix.Statix();
 	const itemsSignal = instance.signal(props.data);
 	const statixDOM = instance.getStatixDOM();
 
+	// instance.registerSignal("items", props.data);
+
+	// instance.signals.items.subscribe(renderListItems);
+	// instance.signals.items.emit();
+	
 	statixDOM.setRoot(`[data-${statix.CONST.DATASET_BIND_ID}="${props.bindSelector}"]`);
 	statixDOM.root().addEvent("click", instance.shareSignalToEvent(itemsSignal, listItemActionsHandler));
 

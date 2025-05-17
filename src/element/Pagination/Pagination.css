@@ -1,0 +1,7 @@
+.ecokompass-active_page::after {
+	opacity: 1;
+}
+
+.ecokompass-active_page {
+	color: black;
+}

@@ -58,6 +58,10 @@ class Statix {
 	 *	 @private
    */
 	#mMetadata = null;
+	// /**
+	//  *  @type {Object<string, StatixSignal>}
+	//  */
+	// signals = null;
   /**
 	 *  @returns {Statix}
 	 */
@@ -65,6 +69,8 @@ class Statix {
 		this.#mStatixDOM = new StatixDOM(this);
 		this.#mCache = {};
 		this.#mMetadata = { mSignals: [] };
+
+		// this.signals = {};
 	}
 	/**
 	 *	 Completely remove the data of the class instance.
@@ -78,6 +84,8 @@ class Statix {
 
 		this.#mMetadata = null;
 		this.#mMetadata.mSignals = null;
+
+		this.signals = null;
 	}
 	/**
 	 *	Returns instance of StatixDOM instance, StatixDOM is automaticaly created by calling Statix constructor.
@@ -102,6 +110,48 @@ class Statix {
 
 		return data;
 	}
+	// /**
+	//  *	@param {string} signalName
+	//  *	@param {any} signalInitValue 
+	//  */
+	// registerSignal(signalName, signalInitValue) {
+	// 	const statix = this;
+
+	// 	const signal = {
+	// 		val: function() {
+	// 			return this.__val__;
+	// 		},
+	// 		set: function(newValueOrCallback) {
+	// 			signal__set__(newValueOrCallback, this.__val__, statix);
+	// 		},
+	// 		subscribe: function(renderer) {
+	// 			signal__subscribe__(this.__subscribers__, renderer);
+	// 		},
+	// 		unsubscribe: function(rendererToUnsubscribe) {
+	// 			signal__unsubscribe__(this.__subscribers__, rendererToUnsubscribe);
+	// 		},
+	// 		emit: function() {
+	// 			signal__emit__(this, statix);
+	// 		},
+	// 	};
+
+	// 	Object.defineProperties(signal, {
+	// 		__val__: {
+	// 			configurable: false,
+	// 			enumerable: false,
+	// 			writable: true,
+	// 			value: signalInitValue
+	// 		},
+	// 		__subscribers__: {
+	// 			configurable: false,
+	// 			enumerable: false,
+	// 			writable: true,
+	// 			value: {}
+	// 		}
+	// 	})
+
+	// 	this.signals[signalName] = signal;
+	// }
 	/**
 	 *	@param {StatixSignal} signal
 	 *  @param {StatixSignalShareTarget} target

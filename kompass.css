@@ -17,6 +17,7 @@
 @import url(./src/element/Select/Select.css);
 @import url(./src/element/Text-Area/TextArea.css);
 @import url(./src/element/Text-Input/TextInput.css);
+@import url(./src/element/Pagination/Pagination.css);
 
 .ecokompass-container {
 	padding: var(--var-padding-l);
