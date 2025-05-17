@@ -13,7 +13,7 @@ import {
 	G_WARNING_LVL 
 } from "./STRING.const.js";
 
-registerServiceWorker("sw.js");
+registerServiceWorker("./sw.js");
 
 // DOM Elements
 const kompassForm = document.getElementById("ecokompass_form");

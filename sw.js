@@ -1,5 +1,5 @@
-const G_CACHE_CURR_VERSION = "v0.0.1";
-const G_CACHE_PREV_VERSION = "v0.0.0";
+const G_CACHE_CURR_VERSION = "v0.0.2";
+const G_CACHE_PREV_VERSION = "v0.0.1";
 
 async function __fetchResource__(event) {
 	try {
@@ -44,6 +44,7 @@ async function installWorker(event) {
 		// Pages
 		"/kompass.html",
 		"/index.html",
+		"/404.html",
 		// Images
 		"/src/imgs/PWA_1_Chrome_Mobile.webp",
 		"/src/imgs/PWA_2_Chrome_Mobile.webp",
@@ -62,6 +63,7 @@ async function installWorker(event) {
 		// CSS
 		"/kompass.css",
 		"/index.css",
+		"/404.css",
 		"/src/css/flex-column.css",
 		"/src/css/media-query.css",
 		"/src/css/variable.css",
@@ -79,6 +81,7 @@ async function installWorker(event) {
 		"/src/element/Text-Area/TextArea.css",
 		"/src/element/Text-Input/TextInput.css",
 		// Manifest
+		"/404.manifest.json",
 		"/index.manifest.json",
 		"/kompass.manifest.json",
 		// Fonts
@@ -92,6 +95,7 @@ async function installWorker(event) {
 		"/src/fonts/Poppins-SemiBold.woff2",
 		"/src/fonts/Poppins-Thin.woff2",
 		// JS
+		"/404.js",
 		"/index.js",
 		"/kompass.js",
 		"/NUMBER.const.js",

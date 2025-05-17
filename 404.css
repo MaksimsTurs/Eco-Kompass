@@ -1,0 +1,12 @@
+@import url(./src/css/reset.css);
+@import url(./src/css/variable.css);
+@import url(./src/css/common.css);
+@import url(./src/css/font.css);
+@import url(./src/css/flex-row.css);
+@import url(./src/css/flex-column.css);
+
+h1 {
+	font-weight: 600;
+	font-size: clamp(5rem, 10vw, 20rem);
+	text-shadow: 5px 5px rgba(0, 0, 0, 0.562);
+}
