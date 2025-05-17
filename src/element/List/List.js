@@ -8,13 +8,13 @@ export default function List(props) {
 	const itemsSignal = instance.signal(props.data);
 	const statixDOM = instance.getStatixDOM();
 
-	statixDOM.setRoot(props.selector);
+	statixDOM.setRoot(`[data-${statix.CONST.DATASET_BIND_ID}="${props.bindSelector}"]`);
 	statixDOM.root().addEvent("click", instance.shareSignalToEvent(itemsSignal, listItemActionsHandler));
 
 	itemsSignal.subscribe(renderListItems);
 	itemsSignal.emit();
 
-	return { instance, itemsSignal };
+	return { instance };
 }
 
 function getKey(item) {

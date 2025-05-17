@@ -18,11 +18,8 @@
 @import url(./src/element/Text-Area/TextArea.css);
 @import url(./src/element/Text-Input/TextInput.css);
 
-main {
-	padding: var(--var-padding-l);
-}
-
 .ecokompass-container {
+	padding: var(--var-padding-l);
 	width: var(--var-main-container-size);
 }
 
@@ -33,6 +30,7 @@ main {
 }
 
 .ecokompass-section_container > h2 {
+	word-break: break-all;
 	padding: var(--var-padding-m);
 	margin-bottom: var(--var-margin-m);
 	width: 100%;

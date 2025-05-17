@@ -4,6 +4,7 @@ import Select from "./src/element/Select/Select.js";
 import statix from "./src/libs/statix/src/statix.core.js";
 
 import isInRange from "./src/utils/isInRange.utils.js";
+import registerServiceWorker from "./src/utils/registerServiceWorker.utils.js";
 
 import { 
 	G_FACTOR 
@@ -12,15 +13,13 @@ import {
 	G_WARNING_LVL 
 } from "./STRING.const.js";
 
-if(navigator.serviceWorker) {
-	navigator.serviceWorker.register("sw.js", { scope: "/" });
-}
+registerServiceWorker("sw.js");
 
 // DOM Elements
 const kompassForm = document.getElementById("ecokompass_form");
 const kompassFormInputs = kompassForm.querySelectorAll("input, textarea");
 
-const list = List({ selector: "#ecokompass_list", data: JSON.parse(localStorage.getItem("ecokompass") || "[]") });
+const list = List({ bindSelector: "ecokompass_list", data: JSON.parse(localStorage.getItem("ecokompass") || "[]") });
 
 const selectStatixInstances = [];
 

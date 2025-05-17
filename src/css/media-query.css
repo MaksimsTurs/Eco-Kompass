@@ -1,4 +1,5 @@
 @media(width <= 640px) {
+	body,
 	.ecokompass-container,
 	.ecokompass-point_inputs,
 	.ecokompass-about_body,
