@@ -14,7 +14,7 @@ export default function List(props) {
 	itemsSignal.subscribe(renderListItems);
 	itemsSignal.emit();
 
-	return { instance };
+	return { instance, itemsSignal };
 }
 
 function getKey(item) {

@@ -133,7 +133,7 @@ class Statix {
 	}
 	/**
 	 *	@param {string} key
-	 *	@param {any} data 
+	 *		@param {any} data 
 	 */
 	setCache(key, data) {
 		if(isStatixDOMManipulation(data)) {
