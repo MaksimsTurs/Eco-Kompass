@@ -8,8 +8,6 @@ async function __fetchResource__(event) {
 		if(resource) {
 			return resource;
 		}
-
-		caches.delete()
 	
 		resource = await fetch(event.request);
 	
@@ -94,11 +92,13 @@ async function installWorker(event) {
 		"/src/fonts/Poppins-SemiBold.woff2",
 		"/src/fonts/Poppins-Thin.woff2",
 		// JS
-		"/sw.js",
 		"/index.js",
 		"/kompass.js",
 		"/NUMBER.const.js",
 		"/STRING.const.js",
+		"/src/utils/isCSSSupport.utils.js",
+		"/src/utils/isJSSupport.utils.js",
+		"/src/utils/registerServiceWorker.utils.js",
 		"/src/utils/isInRange.utils.js",
 		"/src/element/Checkbox/Checkbox.js",
 		"/src/element/Empty/Empty.js",
