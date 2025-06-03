@@ -1,7 +1,7 @@
-.ecokompass-active_page::after {
-	opacity: 1;
+.ecokompass-curr_page::after {
+	transform: translate(0%, 0%) !important;
 }
 
-.ecokompass-active_page {
-	color: black;
+.ecokompass-curr_page {
+	color: black !important;
 }

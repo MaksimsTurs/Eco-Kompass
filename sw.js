@@ -1,5 +1,9 @@
-const G_CACHE_CURR_VERSION = "v0.0.2";
-const G_CACHE_PREV_VERSION = "v0.0.1";
+const G_CACHE_CURR_VERSION = "v0.0.3";
+const G_CACHE_PREV_VERSION = "v0.0.2";
+
+self.addEventListener("install", installWorker);
+self.addEventListener("fetch", fetchWorker);
+self.addEventListener("activate", activateWorker);
 
 async function __fetchResource__(event) {
 	try {
@@ -19,10 +23,6 @@ async function __fetchResource__(event) {
 	}
 }
 
-self.addEventListener("install", installWorker);
-self.addEventListener("fetch", fetchWorker);
-self.addEventListener("activate", activateWorker);
-
 function activateWorker(event) {
 	console.log("[WORKER]: Activate", event);
 }
@@ -41,10 +41,15 @@ async function installWorker(event) {
 	}
 
 	const STATIC_RESOURCE_PATHS = [
+		// Some metadata and others
+		"/sitemap.xml",
+		"/robots.txt",
+		"/Eco-Kompaß.xlsx",
 		// Pages
 		"/kompass.html",
 		"/index.html",
 		"/404.html",
+		"/how-to-use.html",
 		// Images
 		"/src/imgs/PWA_1_Chrome_Mobile.webp",
 		"/src/imgs/PWA_2_Chrome_Mobile.webp",
@@ -61,22 +66,17 @@ async function installWorker(event) {
 		"/favico512x512.webp",
 		"/favico1024x1024.webp",
 		// CSS
-		"/kompass.css",
-		"/index.css",
 		"/404.css",
-		"/src/css/flex-column.css",
-		"/src/css/media-query.css",
-		"/src/css/variable.css",
-		"/src/css/flex-row.css",
-		"/src/css/position.css",
-		"/src/css/common.css",
-		"/src/css/reset.css",
-		"/src/css/font.css",
+		"/index.css",
+		"/kompass.css",
+		"/how-to-use.css",
+		// Elements css
 		"/src/element/Button/Button.css",
 		"/src/element/Checkbox/Checkbox.css",
 		"/src/element/Empty/Empty.css",
 		"/src/element/Error/Error.css",
-		"/src/element/List/List.css",
+		"/src/element/List/ListItem.css",
+		"/src/element/Pagination/Pagination.css",
 		"/src/element/Select/Select.css",
 		"/src/element/Text-Area/TextArea.css",
 		"/src/element/Text-Input/TextInput.css",
@@ -84,6 +84,7 @@ async function installWorker(event) {
 		"/404.manifest.json",
 		"/index.manifest.json",
 		"/kompass.manifest.json",
+		"/how-to-use.manifest.json",
 		// Fonts
 		"/src/fonts/Poppins-Black.woff2",
 		"/src/fonts/Poppins-ExtraBold.woff2",
@@ -98,34 +99,35 @@ async function installWorker(event) {
 		"/404.js",
 		"/index.js",
 		"/kompass.js",
+		"/how-to-use.js",
 		"/NUMBER.const.js",
 		"/STRING.const.js",
-		"/src/utils/isCSSSupport.utils.js",
-		"/src/utils/isJSSupport.utils.js",
-		"/src/utils/registerServiceWorker.utils.js",
+		// JS Utils		
+		"/src/utils/registerSW.utils.js",
 		"/src/utils/isInRange.utils.js",
-		"/src/element/Checkbox/Checkbox.js",
+		// Element JS
 		"/src/element/Empty/Empty.js",
 		"/src/element/List/List.js",
 		"/src/element/List/ListItem.js",
+		"/src/element/Pagination/Pagination.js",
 		"/src/element/Select/Select.js",
+		// Libs
+		"/src/libs/statix/NUMBER.const.js",
 		"/src/libs/statix/STRING.const.js",
+		"/src/libs/statix/src/element.core.js",
 		"/src/libs/statix/src/statix.core.js",
-		"/src/libs/statix/src/Statix.js",
-		"/src/libs/statix/src/StatixDOM.js",
-		"/src/libs/statix/src/StatixDOMManipulation.js",
-		"/src/libs/statix/src/StatixErrors.js",
-		"/src/libs/statix/src/Utils.js",
-		"/src/libs/statix/src/utils/isDocumentFragment.utils.js",
-		"/src/libs/statix/src/utils/isElement.utils.js",
-		"/src/libs/statix/src/utils/isFunction.utils.js",
-		"/src/libs/statix/src/utils/isNull.utils.js",
-		"/src/libs/statix/src/utils/isObject.utils.js",
-		"/src/libs/statix/src/utils/isStatix.utils.js",
-		"/src/libs/statix/src/utils/isStatixDOMManipulation.utils.js",
-		"/src/libs/statix/src/utils/isString.utils.js",
-		"/src/libs/statix/src/utils/isUndefined.utils.js",
-		"/src/libs/statix/src/utils/precompiled.utils.js",
+		"/src/libs/statix/src/StatixContext.core.js",
+		"/src/libs/statix/src/StatixDOM.core.js",
+		"/src/libs/statix/src/StatixElement.core.js",
+		"/src/libs/statix/src/StatixErrors.core.js",
+		"/src/libs/statix/src/StatixSignal.core.js",
+		"/src/libs/statix/src/utils.core.js",
+		"/src/libs/statix/src/utils/appendChildWhenExist.utils.js",
+		"/src/libs/statix/src/utils/debug.utils.js",
+		"/src/libs/statix/src/utils/define.utils.js",
+		"/src/libs/statix/src/utils/diff.utils.js",
+		"/src/libs/statix/src/utils/getRootFromOptions.utils.js",
+		"/src/libs/statix/src/utils/is.utils.js",
 	];
 
 	try {

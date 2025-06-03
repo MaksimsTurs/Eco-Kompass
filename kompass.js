@@ -1,34 +1,45 @@
 import List from "./src/element/List/List.js";
 import Select from "./src/element/Select/Select.js";
+import Pagination from "./src/element/Pagination/Pagination.js";
 
 import statix from "./src/libs/statix/src/statix.core.js";
 
 import isInRange from "./src/utils/isInRange.utils.js";
-import registerServiceWorker from "./src/utils/registerServiceWorker.utils.js";
+import registerSW from "./src/utils/registerSW.utils.js";
 
-import { 
-	G_FACTOR 
-} from "./NUMBER.const.js";
-import { 
-	G_WARNING_LVL 
-} from "./STRING.const.js";
+import { G_FACTOR } from "./NUMBER.const.js";
+import { G_WARNING_LVL } from "./STRING.const.js";
 
-registerServiceWorker("./sw.js");
+// registerSW("./sw.js");
 
-// DOM Elements
 const kompassForm = document.getElementById("ecokompass_form");
 const kompassFormInputs = kompassForm.querySelectorAll("input, textarea");
 
-const list = List({ bindSelector: "ecokompass_list", data: JSON.parse(localStorage.getItem("ecokompass") || "[]") });
-
 const selectStatixInstances = [];
+
+const paginationData = new statix.Signal({
+	items: JSON.parse(localStorage.getItem("ecokompass") || "[]"),
+	itemsPerPage: 5,
+	currPage: 0
+});
+
+Pagination({
+	bind: "calculations-pagination",
+	signals: { pagination: paginationData }
+});
+
+const list = List({ 
+	items: JSON.parse(localStorage.getItem("ecokompass") || "[]"),
+	bind: "calculations-list",
+	signals: { pagination: paginationData }
+});
 
 kompassForm
 	.querySelectorAll(".select-input_container")
 	.forEach(function(select) {
 		selectStatixInstances.push(Select({ 
 			options: [{ text: "Einzelfall", value: 0 }, { text: "Geduldet", value: 0.5 }, { text: "Systemisch", value: 1 }],
-			bindSelector: select.dataset[statix.CONST.DATASET_BIND_ID],
+			bind: select.dataset[statix.CONST.DATASET_BIND_ID],
 			default: { text: "P", value: 0 }
 		}));
 	});
@@ -42,8 +53,8 @@ function createNewListItem(event) {
 	const kompassDescriptionInput = kompassForm.querySelector('[name="description"]');
 
 	const newListItem = {
-		id: statix.Utils.generateRandomValue(),
-		title: kompassTitleInput.value || `#${list.itemsSignal.val().length + 1}`,
+		id: statix.utils.generateRandomValue(),
+		title: kompassTitleInput.value || `#${list.signals.items.value.items.length + 1}`,
 		description: kompassDescriptionInput.value,
 		colorLevel:  "",
 		sum: 0
@@ -58,7 +69,7 @@ function createNewListItem(event) {
 		const PInput = selectStatixInstances[statixInstanceIndex++];
 		const BInput = kompassFormInputs.item(index + 3);
 
-		const P = +PInput.val().value;
+		const P = +PInput.selected().value;
 		const B = Number(BInput.value) || 0;
 
 		const errorMessageP = BInput.parentNode.parentNode.querySelector(".error_message");
@@ -107,11 +118,9 @@ function createNewListItem(event) {
 		newListItem.colorLevel = G_WARNING_LVL.OK;
 	}
 
-	list.itemsSignal.set(function(curr) {
-		const updatedList = [...curr, newListItem];
-	
-		localStorage.setItem("ecokompass", JSON.stringify(updatedList));
-		
-		return updatedList;
-	});
+	const updatedList = [...list.signals.items.value.items, newListItem];
+
+	localStorage.setItem("ecokompass", JSON.stringify(updatedList));
+
+	list.signals.items.value = {...list.signals.items.value, items: updatedList };
 }

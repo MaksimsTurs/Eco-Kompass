@@ -29,16 +29,17 @@
 	z-index: -1;
 }
 
+.ecokompass-about_body {
+	padding: 0 var(--var-padding-l);
+	width: var(--var-main-container-size);
+}
+
 .ecokompass-about_body > h1 {
+	font-size: clamp(1.75rem, 2.5vw, 5rem);
 	padding: var(--var-padding-l);
 	margin-bottom: var(--var-margin-l);
 	border-bottom: 1px solid var(--var-silver-low-transparent);
 	text-align: center;
-}
-
-.ecokompass-about_body {
-	padding: 0 var(--var-padding-l);
-	width: var(--var-main-container-size);
 }
 
 .ecokompass-quote_container > p {

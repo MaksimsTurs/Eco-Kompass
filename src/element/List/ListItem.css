@@ -54,20 +54,6 @@
 	box-shadow: 3px 3px 0 0 var(--var-dark-red) !important;
 }
 
-.ecokompass-list_item_delete_button::after {
-	transition: opacity var(--var-transition-fast) ease;
-	border: 1px solid var(--var-dark-red) !important;
-	content: "";
-	position: absolute;
-	left: 0%;
-	top: 0%;
-	width: 100%;
-	height: 100%;
-	opacity: 0;
-	z-index: -1;
-	background-color: #ffffff;
-}
-
 .ecokompass-list_item_delete_button:hover {
 	color: var(--var-dark-red) !important;
 }

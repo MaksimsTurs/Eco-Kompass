@@ -1,15 +1,5 @@
+import { tag } from "../../libs/statix/src/element.core.js";
+
 export default function Empty(props) {
-	const container = document.createElement("div");
-
-	container.classList.add(...["empty_container", "flex-r-c-c-xs"]);
-	
-	if(props?.icon && props?.icon instanceof HTMLElement) {
-		container.appendChild(props.icon);
-	} else if(props?.icon && typeof props?.icon === "string") {
-		container.insertAdjacentHTML("beforeend", props.icon);
-	}
-
-	container.append(props.text);
-
-	return container
+	return tag("div").class(["flex-r-c-c-xs", "empty_container"]).childs(props?.icon, props.text);
 }

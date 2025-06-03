@@ -1,14 +1,14 @@
-.text_input {
+.text-input {
 	padding: var(--var-padding-s) var(--var-padding-l);	
 	border: 1px solid #000000;
 	background-color: #ffff;
 }
 
-.text_input:hover {
+.text-input:hover {
 	background-color: #c0c0c053;
 }
 
-.text_input::placeholder {
+.text-input::placeholder {
 	font-size: var(--var-font-m);
 	color: var(--var-dark-silver);
 }

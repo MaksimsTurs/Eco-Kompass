@@ -1,0 +1,31 @@
+/* Others */
+@import url(./src/css/reset.css);
+@import url(./src/css/variable.css);
+@import url(./src/css/font.css);
+@import url(./src/css/common.css);
+/* Layout */
+@import url(./src/css/media-query.css);
+@import url(./src/css/flex-column.css);
+@import url(./src/css/flex-row.css);
+/* Elements */
+@import url(./src/element/Button/Button.css);
+
+main {
+	width: 100%;
+	padding: var(--var-padding-s);
+}
+
+.ecokompass-container {
+	max-width: var(--var-main-container-size);
+}
+
+.ecokompass-bold {
+	font-weight: 700;
+	display: inline-flex;
+}
+
+.ecokompass-pwa_tutorial_img {
+	display: block;
+	width: fit-content;
+	max-width: 100%;
+}

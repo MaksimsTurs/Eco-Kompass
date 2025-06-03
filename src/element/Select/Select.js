@@ -1,81 +1,65 @@
 import statix from "../../libs/statix/src/statix.core.js";
+import { fragment, tag } from "../../libs/statix/src/element.core.js";
 
-const G_STATIX_SELECT_OPTION_VALUE = "statix_select_value";
+const G_STATIX_SELECT_OPTION_VALUE = "select-value";
 
 export default function Select(props) {
-	const instance = new statix.Statix();
-	const statixDOM = instance.getStatixDOM();
+	const select = new statix.Element();
 
-	const optionsSignal = instance.signal(props.options);
-	const isSelectOpenSignal = instance.signal(false);
-	const selectedSignal = instance.signal(props.default);
+	const options = new statix.Signal(props.options);
+	const selected = new statix.Signal(props.default);
 
-	statixDOM.setRoot(`[data-${statix.CONST.DATASET_BIND_ID}="${props.bindSelector}"]`);
-	statixDOM.root().addClass(props.className).addEvent("click", instance.shareSignalToEvent({ selectedSignal, isSelectOpenSignal }, handleSelectOptionClick));
+	select.addSignal("options", options);
+	select.addSignal("selected", selected);
 
-	isSelectOpenSignal.subscribe(renderIsSelectOpen);
+	select.bind(props.bind);
+	
+	statix.utils.delegateEvent(select, "click", actionHandler);
 
-	optionsSignal.subscribe(renderSelectOptions);
-	optionsSignal.emit();
+	options.subscribe(select, renderSelectOptions);
+	selected.subscribe(select, renderSelectedOption);
 
-	selectedSignal.subscribe(renderSelectedOption);
-	selectedSignal.emit();
-
-	return { val: selectedSignal.val, reset: __reset__(selectedSignal, props.default) };
+	return { 
+		reset: () => selected.value = props.default,
+		selected: () => selected.value,
+	};
 }
 
-function __reset__(selectedSignal, defaultValue) {
-	return function() {
-		selectedSignal.set(defaultValue);
-	}
+function actionHandler(action) {
+	const { event, signals, type } = action;
+
+	switch(type) {
+		case "close-open-select":
+			toggleExpandList(event);
+		break;
+		case "select-value":
+			signals.selected.value = { 
+				text: event.target.textContent, 
+				value: event.target.getAttribute(`data-${G_STATIX_SELECT_OPTION_VALUE}`) 
+			};
+
+			toggleExpandList(event);
+		break;
+	}	
 }
 
-function renderSelectedOption(instance, curr, _prev) {
-	instance
-		.getStatixDOM()
-		.root()
-		.query(".select-selected")
-		.text(curr.text);
+function toggleExpandList(event) {
+	event.currentTarget.classList.toggle("select-input_container_active");
+	event.currentTarget.lastElementChild.classList.toggle("select-list_open")
 }
 
-function renderIsSelectOpen(instance, _curr, _prev) {
-	instance
-		.getStatixDOM()
-		.root()
-		.query(".select-list")
-		.toggleClass("select-list_open");
+function renderSelectedOption(instance) {
+	instance.render(fragment().child(instance.signals.selected.value.text), { replaceRootWith: { at: 0 }});
 }
 
-function handleSelectOptionClick(signals, _nstance, event) {
-	const { selectedSignal, isSelectOpenSignal } = signals;
+function renderSelectOptions(instance) {
+	const { options } = instance.signals;
 
-	// Handle click on option.
-	if(event.target !== event.currentTarget) {
-		selectedSignal.set({ text: event.target.textContent, value: event.target.dataset[G_STATIX_SELECT_OPTION_VALUE] });
-	}
-
-	isSelectOpenSignal.set(curr => !curr);
+	instance.render(
+		fragment().childs(options.value.map(option => tag("li").stxtaction("select-value").text(option.text).dataset({ [G_STATIX_SELECT_OPTION_VALUE]: option.value }))),
+		{ replaceRootWith: { at: 1 }}
+	);
 }
 
-function renderSelectOptions(instance, curr, _prev) {
-	const STATIX_SELECT_LIST_SELECTOR = ".select-list";
-
-	let index = 0;
-	let length = curr.length;
-
-	const statixDOM = instance.getStatixDOM();
-	const fragment = statixDOM.fragment();
-
-	while(index < length) {
-		fragment
-			.addChilds([
-				statixDOM
-					.element("li")
-					.dataset([{ [G_STATIX_SELECT_OPTION_VALUE]: curr[index].value }])
-					.text(curr[index].text)
-				]);
-		index++;
-	}
-
-	statixDOM.root().query(STATIX_SELECT_LIST_SELECTOR).addChilds([fragment]);
-}
+// 27u7E61)5h
+// 27u7E61)5h

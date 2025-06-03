@@ -11,12 +11,12 @@
 /* Elements */
 @import url(./src/element/Button/Button.css);
 @import url(./src/element/Checkbox/Checkbox.css);
+@import url(./src/element/Text-Input/TextInput.css);
 @import url(./src/element/Empty/Empty.css);
 @import url(./src/element/Error/Error.css);
-@import url(./src/element/List/List.css);
+@import url(./src/element/List/ListItem.css);
 @import url(./src/element/Select/Select.css);
 @import url(./src/element/Text-Area/TextArea.css);
-@import url(./src/element/Text-Input/TextInput.css);
 @import url(./src/element/Pagination/Pagination.css);
 
 .ecokompass-container {
@@ -24,30 +24,13 @@
 	width: var(--var-main-container-size);
 }
 
-.ecokompass-section_container {
-	background-color: #ffff;
-	border: 1px solid #000000;
-	box-shadow: 5px 5px 0 0 #000000;
-}
-
-.ecokompass-section_container > h2 {
-	word-break: break-all;
-	padding: var(--var-padding-m);
-	margin-bottom: var(--var-margin-m);
-	width: 100%;
-	border-bottom: 1px solid #000000;
-}
-
-.ecokompass-section_body {
-	padding: 0 var(--var-margin-m) var(--var-margin-m) var(--var-margin-m);
-}
-
-.ecokompass-pwa_tutorial_img {
-	display: block;
-	width: fit-content;
-	max-width: 100%;
-}
-
 .ecokompass-point_label {
 	font-size: clamp(var(--var-font-l), 2.5vw, var(--var-font-xl));
+}
+
+.ecokompass-goto_button {
+	display: flex;
+	align-items: center;
+	justify-self: center;
+	padding: var(--var-padding-s);
 }

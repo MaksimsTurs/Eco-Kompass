@@ -1,22 +1,17 @@
 "use strict"
 
-import Statix from "./Statix.js";
-import StatixDOM from "./StatixDOM.js";
-import Utils from "./Utils.js";
-
-import {
-	G_STATIX_DATASET_LIST_ID,
-	G_STATIX_DATASET_BIND_ID
-} from "../STRING.const.js";
+import StatixElement from "./StatixElement.core.js";
+import StatixSignal from "./StatixSignal.core.js";
+import utils from "./utils.core.js";
 
 const statix = { 
 	CONST: { 
-		DATASET_LIST_ID: G_STATIX_DATASET_LIST_ID,
-		DATASET_BIND_ID: G_STATIX_DATASET_BIND_ID
+		DATASET_LIST_ID: "statixId",
+		DATASET_BIND_ID: "statixBind"
 	},
-	Statix,
-	StatixDOM,
-	Utils 
+	Signal: StatixSignal,
+	Element: StatixElement,
+	utils,
 };
 
 export default statix;

@@ -1,64 +1,50 @@
 import statix from "../../libs/statix/src/statix.core.js";
+import { root, tag } from "../../libs/statix/src/element.core.js";
 
 export default function Pagination(props) {
-	const instance = new statix.Statix();
-	const statixDOM = instance.getStatixDOM();
-	const pagesCount = instance.signal(props.pagesCount);
+	const pagination = new statix.Element();
 
-	statixDOM.setRoot(`[data-${statix.CONST.DATASET_BIND_ID}="${props.bindSelector}"]`);
+	pagination.addSignal("pagination", props.signals.pagination);
+	pagination.bind(props.bind);
 
-	pagesCount.subscribe(renderPagesCountList);
-	pagesCount.emit();
+	statix.utils.delegateEvent(pagination, "click", actionHandler);
 
-	return { pagesCount };
+	pagination.signals.pagination.subscribe(pagination, renderPageList);
+
+	return pagination;
 }
 
-function getKey(item) {
-	return item;
-}
+function actionHandler(action) {
+	const { event, signals, type } = action;
 
-function changeChild(instance, item, child, index) {
-	instance
-		.getStatixDOM()
-			.element(child)
-			.dataset([{ [statix.CONST.DATASET_LIST_ID]: statix.Utils.generateRandomValue() }])
-			.childAt([0])
-			.addClass("button")
-			.removeClass("ecokompass-active_page")
-			.text(index);
-}
-
-function createChild(instance, __item__, index) {
-	let paginationButton = instance.getCache("pagination_button");
-
-	const statixDOM = instance.getStatixDOM();
-
-	if(!paginationButton) {
-		paginationButton = statixDOM
-			.element("li")
-			.dataset([{ [statix.CONST.DATASET_LIST_ID]: statix.Utils.generateRandomValue() }])
-			.addChilds([
-				statixDOM
-					.element("button")
-					.addClass("button ecokompass-active_page")
-					.text(index)
-			]);
-		instance.setCache("pagination_button", paginationButton);
-	} else {
-		statixDOM
-			.element(paginationButton)
-			.dataset([{ [statix.CONST.DATASET_LIST_ID]: statix.Utils.generateRandomValue() }])
-			.childAt([0])
-			.addClass("button")
-			.removeClass("ecokompass-active_page")
-			.text(index);
+	switch(type) {
+		case "change-page":
+			signals.pagination.value = {
+				...signals.pagination.value, 
+				currPage: +event.target.textContent
+			};
+		break;
 	}
-
-	return paginationButton;
 }
 
-function renderPagesCountList(instance, curr, prev) {
-	const statixDOM = instance.getStatixDOM();
+function renderPageList(instance) {
+	const { pagination } = instance.signals;
 
-	statixDOM.each([...Array(curr)], [...Array(prev || 0)], getKey, null, changeChild, createChild);
+	if(!pagination.value.items.length) {
+		instance.unmount();
+	} else {
+		instance.mount();
+
+		const pagesCount = Math.ceil(pagination.value.items.length / pagination.value.itemsPerPage);
+		const baseIndex = (pagination.value.currPage + 1) === pagesCount ? -1 : pagination.value.currPage === 0 ? 1 : 0;
+		const pageButtons = Array
+			.from({ length: pagesCount })
+			.map((_, index) => tag("button").stxtaction("change-page").class(index === pagination.value.currPage ? ["button", "ecokompass-curr_page"] : ["button"]).text(index));
+
+		instance.render(root().childs(
+			pageButtons[(pagination.value.currPage - 1) + baseIndex], 
+			pageButtons[pagination.value.currPage + baseIndex], 
+			pageButtons[(pagination.value.currPage + 1) + baseIndex])
+		);
+	}
 }

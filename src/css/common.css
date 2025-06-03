@@ -3,47 +3,20 @@
 	font-weight: 700;
 }
 
-.ecokompass-link {
-	color: var(--var-link-color);
-	display: inline-flex;
-	font-weight: 700;
-	position: relative;
-	overflow: hidden;
-	z-index: 0;
+.ecokompass-section_container {
+	background-color: #ffff;
+	border: 1px solid #000000;
+	box-shadow: 5px 5px 0 0 #000000;
 }
 
-.ecokompass-link::after {
-	background-color: var(--var-link-color);
-	transition:
-		transform var(--var-transition-fast) ease-in,
-		color var(--var-transition-slow) ease-in;
-	content: "";
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	left: 0%;
-	top: 0%;
-	transform: translate(-105%);
-	z-index: -1;
-}
-
-.ecokompass-link:hover::after {
-	transition: transform var(--var-transition-fast) ease;
-	transform: translate(0%);
-}
-
-.ecokompass-link:hover {
-	transition: color var(--var-transition-slow) ease-out;
-	color: #ffffff;
-}
-
-footer {
+.ecokompass-section_container > h2 {
+	word-break: break-all;
 	padding: var(--var-padding-m);
-	margin-top: var(--var-padding-l);
-	border-top: 1px solid var(--var-black-medium-transparent);
+	margin-bottom: var(--var-margin-m);
+	width: 100%;
+	border-bottom: 1px solid #000000;
 }
 
-.ecokompass-bold {
-	font-weight: 700;
-	display: inline-flex;
+.ecokompass-section_body {
+	padding: 0 var(--var-margin-m) var(--var-margin-m) var(--var-margin-m);
 }
